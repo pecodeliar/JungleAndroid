@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
-import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,8 +19,6 @@ import androidx.compose.ui.unit.sp
 import com.example.googlemock.R
 import com.example.googlemock.screen_collections.model.Bookmark
 import com.example.googlemock.ui.theme.Accent
-import com.example.googlemock.ui.theme.Container
-import com.example.googlemock.ui.theme.Secondary
 import com.example.googlemock.ui.theme.TextButton
 
 //The card that shows when there hasn't been anything they have tracked to that particular section
@@ -78,22 +75,40 @@ fun BookmarkBox(bookmark: Bookmark) {
                 }
             }
             Column(
-                modifier = Modifier.padding(bottom = 15.dp).fillMaxHeight(),
+                modifier = Modifier
+                    .padding(bottom = 15.dp)
+                    .fillMaxHeight(),
             ) {
-                Text(
-                    text = bookmark.title,
-                    color = Accent,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(top = 10.dp, end = 20.dp)
-                )
-                Text(
-                    text = bookmark.text,
-                    color = Color.Gray,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Normal,
-                    modifier = Modifier.padding(top = 3.dp, end = 20.dp)
-                )
+                Column(modifier = Modifier) {
+                    Text(
+                        text = bookmark.title,
+                        color = Accent,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 10.dp, end = 20.dp)
+                    )
+                    Text(
+                        text = bookmark.text,
+                        color = Color.Gray,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Normal,
+                        modifier = Modifier.padding(top = 3.dp, end = 20.dp)
+                    )
+                }
+                if (bookmark.learn) {
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.End
+                    ) {
+                        Text(
+                            text = "Learn more",
+                            color = TextButton,
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(top = 3.dp, end = 15.dp)
+                        )
+                    }
+                }
             }
         }
     }
@@ -107,7 +122,7 @@ fun BookmarkBoxPreview() {
         bookmark = Bookmark(
             "Your Mom",
             "The birds are spies that are a part of the bourgeoisie.",
-            false
+            true
         )
     )
 }
