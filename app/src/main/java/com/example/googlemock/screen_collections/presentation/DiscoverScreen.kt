@@ -3,6 +3,7 @@ package com.example.googlemock.screen_collections.presentation
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Surface
@@ -18,7 +19,9 @@ import androidx.compose.ui.unit.dp
 import com.example.googlemock.R
 import com.example.googlemock.screen_discover.components.ArticleItem
 import com.example.googlemock.screen_discover.components.DiscoverSearchBar
+import com.example.googlemock.screen_discover.components.StoryItem
 import com.example.googlemock.screen_discover.data.ArticleData
+import com.example.googlemock.screen_discover.data.StoryData
 import com.example.googlemock.screen_discover.model.Article
 import com.example.googlemock.screen_discover.repository.ArticleRepository
 import com.example.googlemock.ui.theme.Primary
@@ -26,7 +29,8 @@ import com.example.googlemock.ui.theme.Primary
 @Composable
 fun DiscoverScreen() {
 
-    val articles = remember { ArticleData.articleList }
+    val articles = remember { ArticleData.articleList.shuffled() }
+    val stories = remember { StoryData.storiesList }
 
     Surface(
         modifier = Modifier
@@ -68,6 +72,19 @@ fun DiscoverScreen() {
                 DiscoverSearchBar(text = "", onTextChange = {})
             }
             LazyColumn() {
+                items(2) {
+                        index -> ArticleItem(article = articles[index])
+                }
+                item {
+                    LazyRow() {
+                        items(
+                            items = stories,
+                            itemContent = {
+                                StoryItem(story = it)
+                            }
+                        )
+                    }
+                }
                 items(
                     items = articles,
                     itemContent = {
