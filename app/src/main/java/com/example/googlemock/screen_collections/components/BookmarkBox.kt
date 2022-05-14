@@ -119,10 +119,6 @@ fun BookmarkBox(bookmark: Bookmark) {
 @Composable
 fun BookmarkBoxPreview() {
     BookmarkBox(
-        bookmark = Bookmark(
-            "Your Mom",
-            "The birds are spies that are a part of the bourgeoisie.",
-            true
-        )
+        bookmark = Bookmark.SHOPPING
     )
 }
