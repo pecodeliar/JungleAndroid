@@ -13,7 +13,8 @@ enum class Placeholder (
     val background: Color,
     val button: String,
     @DrawableRes val graphic: Int
-        ) {
+
+    ) {
 
     SHOWS(
         "shows and movies",
