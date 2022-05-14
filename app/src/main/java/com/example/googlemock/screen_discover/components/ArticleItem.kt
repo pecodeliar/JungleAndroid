@@ -36,6 +36,7 @@ fun ArticleItem(article: Article) {
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxWidth()
+                .height(250.dp)
                 .clip(RoundedCornerShape(10.dp))
         )
         Text(
