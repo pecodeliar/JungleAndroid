@@ -22,7 +22,7 @@ object ArticleData {
         Article(
             logo = R.drawable.pingu,
             image = R.drawable.pingubleh,
-            title = "Better Tasting Food is Needed During These Time",
+            title = "Better Tasting Food is Needed During These Times",
             source = "Pingu Podcast",
             date = "1w"
         ),

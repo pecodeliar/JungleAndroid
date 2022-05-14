@@ -32,7 +32,9 @@ fun StoryItem(story: Story) {
     ) {
         Box(modifier = Modifier
             .height(350.dp)
-            .width(250.dp).padding(15.dp).clip(RoundedCornerShape(15.dp))
+            .width(250.dp)
+            .padding(8.dp)
+            .clip(RoundedCornerShape(15.dp))
         ) {
             Image(
                 painter = painterResource(id = story.image),

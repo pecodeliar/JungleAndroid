@@ -70,7 +70,7 @@ fun ArticleItem(article: Article) {
                     modifier = Modifier.padding(start = 5.dp)
                 )
                 Text(
-                    text = article.date,
+                    text = "•  ${article.date}",
                     color = Accent,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Normal,
