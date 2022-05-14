@@ -17,9 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.googlemock.R
 import com.example.googlemock.screen_collections.model.Placeholder
-import com.example.googlemock.ui.theme.Accent
 import com.example.googlemock.ui.theme.CardButton
-import com.example.googlemock.ui.theme.ShowsCard
 
 //The card that shows when there hasn't been anything saved
 @Composable
@@ -93,11 +91,6 @@ fun PlaceholderCard(placeholder: Placeholder) {
 @Preview
 @Composable
 fun PlaceholderCardPreview() {
-    PlaceholderCard(placeholder = Placeholder(
-        "shows and movies",
-        "watch", ShowsCard,
-        "watchlist",
-        R.drawable.plc_movie
-        )
+    PlaceholderCard(placeholder = Placeholder.RECIPES
     )
 }
