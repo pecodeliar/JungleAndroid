@@ -26,9 +26,9 @@ fun PlaceholderCard(placeholder: Placeholder) {
         modifier = Modifier
             .fillMaxWidth()
             .height(213.dp)
-            .clip(RoundedCornerShape(15.dp))
             .padding(10.dp),
-        backgroundColor = placeholder.background
+        backgroundColor = placeholder.background,
+        shape = RoundedCornerShape(5)
     ) {
         Row(
             modifier = Modifier
@@ -36,7 +36,7 @@ fun PlaceholderCard(placeholder: Placeholder) {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Column(modifier = Modifier
-                .width(250.dp)
+                .width(225.dp)
                 .padding(10.dp)
                 .fillMaxHeight(),
                 verticalArrangement = Arrangement.SpaceEvenly
@@ -78,9 +78,9 @@ fun PlaceholderCard(placeholder: Placeholder) {
             ) {
                 Image(
                     painterResource(placeholder.graphic),
-                    contentScale = ContentScale.Crop,
                     contentDescription = "Graphic",
-                    modifier = Modifier.fillMaxHeight()
+                    modifier = Modifier.fillMaxHeight(),
+                    contentScale = ContentScale.FillHeight
                 )
             }
         }

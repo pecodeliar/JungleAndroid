@@ -24,35 +24,33 @@ import com.example.googlemock.ui.theme.CardButton
 
 @Composable
 fun SearchSuggestion(search: Suggestion) {
-    Surface(
-        shape = CircleShape,
-        modifier = Modifier
-            .clip(RoundedCornerShape(45.dp))
-            .height(50.dp),
+    Button(
+        onClick = { /*TODO*/ },
         border = BorderStroke(1.dp, Accent),
-        color = Color.Transparent
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
+        shape = RoundedCornerShape(50),
+        modifier = Modifier.padding(5.dp)
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            modifier = Modifier.padding(5.dp)
+            horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Icon(
                 imageVector = Icons.Default.Search,
                 contentDescription = "Search Icon",
                 tint = Accent,
                 modifier = Modifier
-                    .alpha(ContentAlpha.medium)
-                    .padding(start = 10.dp)
+                    .alpha(ContentAlpha.medium).size(20.dp)
             )
             Text(
                 text = search.search,
                 color = Accent,
-                modifier = Modifier.padding(10.dp),
-                fontSize = 16.sp
+                modifier = Modifier.padding(start = 3.dp, end = 3.dp),
+                fontSize = 13.sp
             )
             Button(onClick = { /*TODO*/ },
-                modifier = Modifier.size(50.dp).padding(end = 10.dp),
+                modifier = Modifier
+                    .size(20.dp).fillMaxHeight(),
                 contentPadding = PaddingValues(0.dp),
                 shape = CircleShape,
                 colors = ButtonDefaults.buttonColors(backgroundColor = CardButton)
