@@ -19,10 +19,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.googlemock.R
+import com.example.googlemock.screen_collections.components.BookmarkBox
 import com.example.googlemock.screen_collections.components.PlaceholderCard
 import com.example.googlemock.screen_collections.components.QAItem
 import com.example.googlemock.screen_collections.components.SearchSuggestion
 import com.example.googlemock.screen_collections.data.*
+import com.example.googlemock.screen_collections.model.Bookmark
 import com.example.googlemock.screen_collections.model.Placeholder
 import com.example.googlemock.ui.theme.*
 
@@ -46,7 +48,7 @@ fun CollectionsScreen() {
             //Quick Access Section
             item {
                 Column(
-                    modifier = Modifier.padding(10.dp)
+                    modifier = Modifier.padding(7.dp)
                 ) {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -63,8 +65,8 @@ fun CollectionsScreen() {
                         Text(
                             text = "Edit",
                             color = TextButton,
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Normal,
+                            fontSize = 15.sp,
+                            fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(15.dp)
                         )
                     }
@@ -102,16 +104,18 @@ fun CollectionsScreen() {
                         Icon(
                             painter = painterResource(id = R.drawable.col_info),
                             contentDescription = "Information Icon",
-                            tint = Color.White
+                            tint = Accent,
+                            modifier = Modifier.size(17.dp)
                         )
                     }
                     PlaceholderCard(placeholder = Placeholder.SHOWS)
                     Text(
                         text = "People also search for",
-                        color = Container,
-                        fontWeight = FontWeight.ExtraBold
+                        color = Accent,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(7.dp)
                     )
-                    LazyRow() {
+                    LazyRow(contentPadding = PaddingValues(top = 8.dp, bottom = 10.dp)) {
                         items(
                             items = shows,
                             itemContent = {
@@ -121,7 +125,59 @@ fun CollectionsScreen() {
                     }
                 }
             }
-
+            item {
+                Column(modifier = Modifier.padding(top = 4.dp)) {
+                    Divider(color = CardButton, thickness = 1.dp)
+                    Divider(color = Primary, thickness = 6.dp)
+                }
+            }
+            //Shopping Section
+            item {
+                Column(
+                    modifier = Modifier
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "Shopping",
+                            color = Color.White,
+                            fontSize = 23.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            modifier = Modifier.padding(15.dp)
+                        )
+                        Icon(
+                            painter = painterResource(id = R.drawable.col_info),
+                            contentDescription = "Information Icon",
+                            tint = Accent,
+                            modifier = Modifier.size(17.dp)
+                        )
+                    }
+                    BookmarkBox(bookmark = Bookmark.SHOPPING)
+                    Text(
+                        text = "People also search for",
+                        color = Accent,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(7.dp)
+                    )
+                    LazyRow(contentPadding = PaddingValues(top = 8.dp, bottom = 10.dp)) {
+                        items(
+                            items = shopping,
+                            itemContent = {
+                                SearchSuggestion(search = it)
+                            }
+                        )
+                    }
+                }
+            }
+            item {
+                Column(modifier = Modifier.padding(top = 4.dp)) {
+                    Divider(color = CardButton, thickness = 1.dp)
+                    Divider(color = Primary, thickness = 6.dp)
+                }
+            }
         }
     }
 }
