@@ -24,19 +24,23 @@ fun HistoryListItem(history: SearchHistory) {
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Row(modifier = Modifier.padding(5.dp)) {
+        Row(
+            modifier = Modifier.padding(5.dp),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Icon(
                 painterResource(id = R.drawable.sch_clock),
                 contentDescription = "Clock",
                 tint = Color.Gray,
-                modifier = Modifier.size(18.dp)
+                modifier = Modifier.size(25.dp)
             )
             Text(
                 text = history.search,
                 color = Color.White,
-                fontSize = 15.sp,
+                fontSize = 17.sp,
                 modifier = Modifier
-                    .padding(start = 15.dp)
+                    .padding(start = 15.dp).width(265.dp)
             )
         }
         Icon(
@@ -44,7 +48,7 @@ fun HistoryListItem(history: SearchHistory) {
             contentDescription = "Arrow",
             tint = Color.Gray,
             modifier = Modifier
-                .size(18.dp)
+                .size(23.dp)
                 .rotate(45f)
         )
     }
@@ -55,5 +59,5 @@ fun HistoryListItem(history: SearchHistory) {
 @Preview
 @Composable
 fun HistoryListItemPreview() {
-    HistoryListItem(history = SearchHistory("World Domination"))
+    HistoryListItem(history = SearchHistory("how to refer to a variable in the middle of a string in java"))
 }

@@ -68,8 +68,6 @@ class HistoryRepository {
             SearchHistory(
                 search = "how to center column vertically jetpack compose"
             )
-
-
         )
     }
 }
