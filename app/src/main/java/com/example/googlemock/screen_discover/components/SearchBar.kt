@@ -1,5 +1,6 @@
 package com.example.googlemock.screen_discover.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -17,7 +18,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.R
+import com.example.googlemock.common.Screen
 import com.example.googlemock.ui.theme.Accent
 import com.example.googlemock.ui.theme.Secondary
 
@@ -25,6 +29,7 @@ import com.example.googlemock.ui.theme.Secondary
 fun DiscoverSearchBar(
     text: String,
     onTextChange: (String) -> Unit,
+    navController: NavController
 ) {
     Surface(
         modifier = Modifier
@@ -34,7 +39,11 @@ fun DiscoverSearchBar(
         color = Secondary
     ) {
         TextField(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable {
+                    navController.navigate(route = Screen.Search.route)
+                },
             value = text,
             onValueChange = {
                 onTextChange(it)
@@ -86,5 +95,5 @@ fun DiscoverSearchBar(
 @Preview
 @Composable
 fun SearchBarPreview() {
-    DiscoverSearchBar(text = "", onTextChange = {})
+    DiscoverSearchBar(text = "", onTextChange = {}, navController = rememberNavController())
 }

@@ -20,6 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.R
 import com.example.googlemock.screen_discover.components.ArticleItem
 import com.example.googlemock.screen_discover.components.DiscoverSearchBar
@@ -73,7 +74,11 @@ fun DiscoverScreen() {
                         .height(95.dp)
                         .padding(top = 5.dp, bottom = 25.dp)
                 )
-                DiscoverSearchBar(text = "", onTextChange = {})
+                DiscoverSearchBar(
+                    text = "",
+                    onTextChange = {},
+                    navController = rememberNavController()
+                )
             }
             LazyColumn() {
                 items(2) {
