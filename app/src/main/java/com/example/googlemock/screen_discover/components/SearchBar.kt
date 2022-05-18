@@ -28,13 +28,14 @@ import com.example.googlemock.ui.theme.Secondary
 
 @Composable
 fun DiscoverSearchBar(
-    text: String,
-    onTextChange: (String) -> Unit,
     navController: NavController
 ) {
     Button(
         onClick = { /*TODO*/ },
-        modifier = Modifier.fillMaxWidth().height(55.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(10.dp)
+            .height(50.dp),
         shape = RoundedCornerShape(50),
         colors = ButtonDefaults.buttonColors(
             backgroundColor = Secondary
@@ -60,7 +61,7 @@ fun DiscoverSearchBar(
                     modifier = Modifier.alpha(ContentAlpha.medium),
                     text = "Search...",
                     color = Accent,
-                    fontSize = 18.sp
+                    fontSize = 16.sp
                 )
             }
             Spacer(modifier = Modifier.weight(1f))
@@ -152,5 +153,5 @@ fun DiscoverSearchBar(
 @Preview
 @Composable
 fun SearchBarPreview() {
-    DiscoverSearchBar(text = "", onTextChange = {}, navController = rememberNavController())
+    DiscoverSearchBar(navController = rememberNavController())
 }

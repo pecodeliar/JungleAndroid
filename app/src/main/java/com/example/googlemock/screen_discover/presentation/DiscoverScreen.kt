@@ -39,14 +39,76 @@ fun DiscoverScreen() {
 
     Surface(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(15.dp),
+            .fillMaxSize(),
         color = Primary
     ) {
-        Column(
+        LazyColumn {
+            item {
+                Row( //This is for the profile picture
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 10.dp, end = 15.dp),
+                    horizontalArrangement = Arrangement.End
+                ) {
+                    Image(
+                        painterResource(id = R.drawable.vixen),
+                        contentDescription = "",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .width(34.dp)
+                            .height(34.dp)
+                            .clip(RoundedCornerShape(40.dp))
+                    )
+                }
+            }
+            item {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier.padding(bottom = 5.dp)
+                ) {
+                    Image(
+                        painterResource(id = R.drawable.junglebetter),
+                        contentDescription = "Logo",
+                        modifier = Modifier
+                            .width(150.dp)
+                            .height(100.dp)
+                            .padding(top = 5.dp, bottom = 15.dp)
+                    )
+                    DiscoverSearchBar(
+                        navController = rememberNavController()
+                    )
+                }
+            }
+            items(2) {
+                    index -> ArticleItem(article = articles[index])
+            }
+            item {
+                Text(
+                    text = "Stories",
+                    color = Color.White,
+                    fontSize = 23.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    modifier = Modifier.padding(15.dp)
+                )
+                LazyRow(contentPadding = PaddingValues(start = 5.dp)) {
+                    items(
+                        items = stories,
+                        itemContent = {
+                            StoryItem(story = it)
+                        }
+                    )
+                }
+            }
+            items(
+                items = articles,
+                itemContent = {
+                    ArticleItem(article = it)
+                }
+            )
+        }
+        /* Column(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(15.dp),
+                .fillMaxSize(),
         ) {
             Row( //This is for the profile picture
                 modifier = Modifier.fillMaxWidth(),
@@ -57,8 +119,8 @@ fun DiscoverScreen() {
                     contentDescription = "",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
-                        .width(40.dp)
-                        .height(40.dp)
+                        .width(34.dp)
+                        .height(34.dp)
                         .clip(RoundedCornerShape(40.dp))
                 )
             }
@@ -108,7 +170,7 @@ fun DiscoverScreen() {
                     }
                 )
             }
-        }
+        }*/
     }
 }
 

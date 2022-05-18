@@ -65,5 +65,7 @@ dependencies {
 
     implementation "androidx.navigation:navigation-compose:$nav_version"
 
+    //Status Bar
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.17.0"
 
 }
