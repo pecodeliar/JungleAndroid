@@ -31,7 +31,13 @@ fun DiscoverSearchBar(
     navController: NavController
 ) {
     Button(
-        onClick = { /*TODO*/ },
+        onClick = { navController.navigate(
+            "search_screen") {
+                popUpTo("discover_screen") {
+                    inclusive = true
+                }
+            }
+        },
         modifier = Modifier
             .fillMaxWidth()
             .padding(10.dp)

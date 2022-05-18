@@ -20,6 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.R
 import com.example.googlemock.screen_discover.components.ArticleItem
@@ -32,7 +33,9 @@ import com.example.googlemock.screen_discover.repository.ArticleRepository
 import com.example.googlemock.ui.theme.Primary
 
 @Composable
-fun DiscoverScreen() {
+fun DiscoverScreen(
+    navController: NavHostController
+) {
 
     val articles = remember { ArticleData.articleList.shuffled() }
     val stories = remember { StoryData.storiesList }
@@ -74,9 +77,7 @@ fun DiscoverScreen() {
                             .height(100.dp)
                             .padding(top = 5.dp, bottom = 15.dp)
                     )
-                    DiscoverSearchBar(
-                        navController = rememberNavController()
-                    )
+                    DiscoverSearchBar(navController)
                 }
             }
             items(2) {
@@ -179,5 +180,5 @@ fun DiscoverScreen() {
 @Preview
 @Composable
 fun DiscoverScreenPreview() {
-    DiscoverScreen()
+    DiscoverScreen(navController = rememberNavController())
 }
