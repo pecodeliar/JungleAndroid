@@ -28,9 +28,9 @@ fun BookmarkBox(bookmark: Bookmark) {
         modifier = Modifier
             .fillMaxWidth()
             .height(115.dp)
-            .clip(RoundedCornerShape(25.dp))
             .padding(10.dp),
-        backgroundColor = Color.DarkGray
+        backgroundColor = Color.DarkGray,
+        shape = RoundedCornerShape(15)
     ) {
         Row(
             modifier = Modifier.fillMaxSize()
@@ -47,9 +47,9 @@ fun BookmarkBox(bookmark: Bookmark) {
                     Canvas( //https://agarasul.medium.com/shapes-in-jetpack-compose-de740f5507f2
                         modifier = Modifier
                             .size(50.dp)
-                            .padding(top = 20.dp),
+                            .padding(top = 25.dp),
                         onDraw = {
-                            val size = 50.dp.toPx()
+                            val size = 46.dp.toPx()
                             drawCircle(
                                 color = Accent,
                                 radius = size / 2f
@@ -65,11 +65,11 @@ fun BookmarkBox(bookmark: Bookmark) {
                     verticalArrangement = Arrangement.Top
                 ) {
                     Icon(
-                        painterResource(id = R.drawable.col_nav),
+                        painterResource(id = R.drawable.col_bookmark),
                         contentDescription = "Bookmark",
                         tint = TextButton,
                         modifier = Modifier
-                            .padding(top = 28.dp)
+                            .padding(top = 30.dp)
                             .size(15.dp)
                     )
                 }
@@ -79,13 +79,13 @@ fun BookmarkBox(bookmark: Bookmark) {
                     .padding(bottom = 15.dp)
                     .fillMaxHeight(),
             ) {
-                Column(modifier = Modifier) {
+                Column(modifier = Modifier.padding(end = 20.dp)) {
                     Text(
                         text = bookmark.title,
                         color = Accent,
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(top = 10.dp, end = 20.dp)
+                        modifier = Modifier.padding(top = 12.dp, end = 20.dp)
                     )
                     Text(
                         text = bookmark.text,
@@ -105,7 +105,7 @@ fun BookmarkBox(bookmark: Bookmark) {
                             color = TextButton,
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(top = 3.dp, end = 15.dp)
+                            modifier = Modifier.padding(top = 3.dp, end = 22.dp)
                         )
                     }
                 }
@@ -119,10 +119,6 @@ fun BookmarkBox(bookmark: Bookmark) {
 @Composable
 fun BookmarkBoxPreview() {
     BookmarkBox(
-        bookmark = Bookmark(
-            "Your Mom",
-            "The birds are spies that are a part of the bourgeoisie.",
-            true
-        )
+        bookmark = Bookmark.SHOPPING
     )
 }

@@ -36,6 +36,7 @@ fun ArticleItem(article: Article) {
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxWidth()
+                .height(235.dp)
                 .clip(RoundedCornerShape(10.dp))
         )
         Text(
@@ -69,7 +70,7 @@ fun ArticleItem(article: Article) {
                     modifier = Modifier.padding(start = 5.dp)
                 )
                 Text(
-                    text = article.date,
+                    text = "•  ${article.date}",
                     color = Accent,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Normal,

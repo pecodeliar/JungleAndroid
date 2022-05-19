@@ -27,12 +27,15 @@ import com.example.googlemock.ui.theme.Accent
 fun StoryItem(story: Story) {
     Card(
         modifier = Modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(15.dp))
+            .clip(RoundedCornerShape(15.dp)),
+        backgroundColor = Color.Transparent
     ) {
         Box(modifier = Modifier
-            .height(550.dp)
-            .width(500.dp)) {
+            .height(350.dp)
+            .width(250.dp)
+            .padding(8.dp)
+            .clip(RoundedCornerShape(15.dp))
+        ) {
             Image(
                 painter = painterResource(id = story.image),
                 contentDescription = "Story Image",
@@ -75,7 +78,7 @@ fun StoryItem(story: Story) {
                         Text(
                             text = story.title,
                             color = Color.White,
-                            fontSize = 35.sp,
+                            fontSize = 22.sp,
                             fontWeight = FontWeight.Normal,
                             modifier = Modifier.padding(bottom = 12.dp)
                         )
@@ -87,7 +90,7 @@ fun StoryItem(story: Story) {
                             Text(
                                 text = story.source,
                                 color = Color.White,
-                                fontSize = 20.sp,
+                                fontSize = 15.sp,
                                 fontWeight = FontWeight.Normal,
                                 modifier = Modifier.padding(bottom = 10.dp)
                             )

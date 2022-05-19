@@ -17,9 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.googlemock.R
 import com.example.googlemock.screen_collections.model.Placeholder
-import com.example.googlemock.ui.theme.Accent
 import com.example.googlemock.ui.theme.CardButton
-import com.example.googlemock.ui.theme.ShowsCard
 
 //The card that shows when there hasn't been anything saved
 @Composable
@@ -28,9 +26,9 @@ fun PlaceholderCard(placeholder: Placeholder) {
         modifier = Modifier
             .fillMaxWidth()
             .height(213.dp)
-            .clip(RoundedCornerShape(15.dp))
             .padding(10.dp),
-        backgroundColor = placeholder.background
+        backgroundColor = placeholder.background,
+        shape = RoundedCornerShape(5)
     ) {
         Row(
             modifier = Modifier
@@ -38,7 +36,7 @@ fun PlaceholderCard(placeholder: Placeholder) {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Column(modifier = Modifier
-                .width(250.dp)
+                .width(225.dp)
                 .padding(10.dp)
                 .fillMaxHeight(),
                 verticalArrangement = Arrangement.SpaceEvenly
@@ -80,9 +78,9 @@ fun PlaceholderCard(placeholder: Placeholder) {
             ) {
                 Image(
                     painterResource(placeholder.graphic),
-                    contentScale = ContentScale.Crop,
                     contentDescription = "Graphic",
-                    modifier = Modifier.fillMaxHeight()
+                    modifier = Modifier.fillMaxHeight(),
+                    contentScale = ContentScale.FillHeight
                 )
             }
         }
@@ -93,11 +91,6 @@ fun PlaceholderCard(placeholder: Placeholder) {
 @Preview
 @Composable
 fun PlaceholderCardPreview() {
-    PlaceholderCard(placeholder = Placeholder(
-        "shows and movies",
-        "watch", ShowsCard,
-        "watchlist",
-        R.drawable.plc_movie
-        )
+    PlaceholderCard(placeholder = Placeholder.RECIPES
     )
 }

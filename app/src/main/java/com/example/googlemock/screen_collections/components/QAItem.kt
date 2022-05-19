@@ -26,7 +26,7 @@ fun QAItem(visited: Visited) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(50.dp)
+            .height(57.dp).padding(bottom = 7.dp)
     ) {
         Box(
             modifier = Modifier
@@ -53,8 +53,8 @@ fun QAItem(visited: Visited) {
             Text(
                 text = visited.name,
                 color = Color.White,
-                fontSize = 12.sp,
-                fontWeight = FontWeight.Bold,
+                fontSize = 15.sp,
+                fontWeight = FontWeight.Normal,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
