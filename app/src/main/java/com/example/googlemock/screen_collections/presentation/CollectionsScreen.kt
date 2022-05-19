@@ -16,6 +16,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.R
 import com.example.googlemock.screen_collections.components.BookmarkBox
 import com.example.googlemock.screen_collections.components.PlaceholderCard
@@ -27,7 +29,9 @@ import com.example.googlemock.screen_collections.model.Placeholder
 import com.example.googlemock.ui.theme.*
 
 @Composable
-fun CollectionsScreen() {
+fun CollectionsScreen(
+    navController: NavHostController
+) {
     
     val books = remember { BookSuggestionData.bookSearches }
     val recipes = remember { RecipeSuggestionData.recipeSuggestions }
@@ -326,5 +330,5 @@ fun CollectionsScreen() {
 @Preview
 @Composable
 fun CollectionsScreenPreview() {
-    CollectionsScreen()
+    CollectionsScreen(navController = rememberNavController())
 }
