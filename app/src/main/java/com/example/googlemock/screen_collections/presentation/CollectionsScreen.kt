@@ -1,5 +1,6 @@
 package com.example.googlemock.screen_collections.presentation
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -10,7 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -47,6 +50,24 @@ fun CollectionsScreen(
         LazyColumn(
             modifier = Modifier,
         ) {
+            item {
+                Row( //This is for the profile picture
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 10.dp, end = 15.dp),
+                    horizontalArrangement = Arrangement.End
+                ) {
+                    Image(
+                        painterResource(id = R.drawable.vixen),
+                        contentDescription = "",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .width(34.dp)
+                            .height(34.dp)
+                            .clip(RoundedCornerShape(40.dp))
+                    )
+                }
+            }
             //Quick Access Section
             item {
                 Column(
@@ -136,7 +157,8 @@ fun CollectionsScreen(
             //Shopping Section
             item {
                 Column(
-                    modifier = Modifier
+                    modifier = Modifier.padding(10.dp),
+                    verticalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -318,7 +340,7 @@ fun CollectionsScreen(
                 }
             }
             item {
-                Column(modifier = Modifier.padding(top = 4.dp)) {
+                Column(modifier = Modifier.padding(top = 4.dp, bottom = 45.dp)) {
                     Divider(color = CardButton, thickness = 1.dp)
                     Divider(color = Primary, thickness = 6.dp)
                 }

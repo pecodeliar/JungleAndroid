@@ -7,6 +7,9 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
+import androidx.navigation.NavGraph
+import androidx.navigation.compose.rememberNavController
+import com.example.googlemock.screen_discover.presentation.DiscoverScreen
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorPalette = darkColors(
@@ -52,12 +55,12 @@ fun GoogleMockTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Compos
     val useDarkIcons = MaterialTheme.colors.isLight
 
     SideEffect {
-        // Update all of the system bar colors to be transparent, and use
-        // dark icons if we're in light theme
-        systemUiController.setSystemBarsColor(
-            color = Color.Transparent,
-            darkIcons = useDarkIcons
-        )
+            // Update all of the system bar colors to be transparent, and use
+            // dark icons if we're in light theme
+            systemUiController.setSystemBarsColor(
+                color = Primary
+                //darkIcons = useDarkIcons
+            )
 
         // setStatusBarsColor() and setNavigationBarColor() also exist
     }
