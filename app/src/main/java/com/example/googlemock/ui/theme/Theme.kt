@@ -57,7 +57,7 @@ fun GoogleMockTheme(darkTheme: Boolean = true, content: @Composable () -> Unit) 
     SideEffect {
 
             systemUiController.setStatusBarColor(
-                color = CardButton
+                color = Primary
             )
 
             systemUiController.setNavigationBarColor(

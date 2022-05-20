@@ -7,5 +7,6 @@ data class Article(
     @DrawableRes val image: Int,
     val title: String,
     val source: String,
-    val date: String
+    val date: String,
+    val liked: Boolean = false
 )

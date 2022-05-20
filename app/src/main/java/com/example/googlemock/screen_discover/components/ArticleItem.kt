@@ -5,8 +5,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -20,10 +21,12 @@ import androidx.compose.ui.unit.sp
 import com.example.googlemock.screen_discover.model.Article
 import com.example.googlemock.R
 import com.example.googlemock.ui.theme.Accent
-import com.example.googlemock.ui.theme.Container
 
 @Composable
 fun ArticleItem(article: Article) {
+
+    var favorite by remember { mutableStateOf(article.liked) }
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -78,14 +81,24 @@ fun ArticleItem(article: Article) {
                 )
             }
             Row(modifier = Modifier) {
-                Icon(
-                    painterResource(id = R.drawable.dsc_favorite),
-                    contentDescription = "Mock Favorite Button",
-                    tint = Accent,
+                IconButton(
+                    onClick = { favorite = !favorite },
                     modifier = Modifier
                         .padding(start = 20.dp)
                         .size(18.dp)
-                )
+                ) {
+                    Icon(
+                        painterResource(
+                            id = if (favorite) {
+                                R.drawable.dsc_fav_filled
+                            } else {
+                                R.drawable.dsc_favorite
+                            }
+                        ),
+                        contentDescription = "Mock Favorite Button",
+                        tint = Accent
+                    )
+                }
                 Icon(
                     painterResource(id = R.drawable.dsc_share),
                     contentDescription = "Mock Share Button",
