@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -29,7 +30,8 @@ fun SearchSuggestion(search: Suggestion) {
         border = BorderStroke(1.dp, Accent),
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
         shape = RoundedCornerShape(50),
-        modifier = Modifier.padding(5.dp)
+        modifier = Modifier.padding(5.dp),
+        contentPadding = PaddingValues(6.dp)
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -40,25 +42,29 @@ fun SearchSuggestion(search: Suggestion) {
                 contentDescription = "Search Icon",
                 tint = Accent,
                 modifier = Modifier
-                    .alpha(ContentAlpha.medium).size(20.dp)
+                    .alpha(ContentAlpha.medium)
+                    .size(20.dp)
+                    .padding(end = 2.dp, start = 2.dp)
             )
             Text(
                 text = search.search,
-                color = Accent,
-                modifier = Modifier.padding(start = 3.dp, end = 3.dp),
-                fontSize = 13.sp
+                color = Color.White,
+                modifier = Modifier.padding(start = 3.dp, end = 4.dp),
+                fontSize = 16.sp,
+                letterSpacing = 0.2.sp,
+                fontWeight = FontWeight.Light
             )
             Button(onClick = { /*TODO*/ },
                 modifier = Modifier
                     .size(20.dp).fillMaxHeight(),
-                contentPadding = PaddingValues(0.dp),
+                contentPadding = PaddingValues(4.dp),
                 shape = CircleShape,
                 colors = ButtonDefaults.buttonColors(backgroundColor = CardButton)
             ) {
                 Icon(
                     imageVector = Icons.Default.Close,
                     contentDescription = "Search Icon",
-                    tint = Accent,
+                    tint = Color.White,
                     modifier = Modifier.alpha(ContentAlpha.medium)
                 )
             }

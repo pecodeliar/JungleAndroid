@@ -1,3 +1,3 @@
 # Things to Fix / Do
 
-- Fix suggestions composable
+- Change icons for articles into a little bit more functional ones.

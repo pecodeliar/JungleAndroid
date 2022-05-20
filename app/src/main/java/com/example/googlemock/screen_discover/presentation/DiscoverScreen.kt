@@ -106,6 +106,14 @@ fun DiscoverScreen(
                     ArticleItem(article = it)
                 }
             )
+            //This is to make sure that the content isn't hidden by the bottom navbar
+            item {
+                Row(
+                    modifier = Modifier.padding(bottom = 50.dp)
+                ) {
+
+                }
+            }
         }
         /* Column(
             modifier = Modifier

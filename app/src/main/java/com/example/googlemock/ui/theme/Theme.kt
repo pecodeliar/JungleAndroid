@@ -7,18 +7,21 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
+import androidx.navigation.NavGraph
+import androidx.navigation.compose.rememberNavController
+import com.example.googlemock.screen_discover.presentation.DiscoverScreen
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = Primary,
+    primaryVariant = Secondary,
+    secondary = CardButton
 )
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = Primary,
+    primaryVariant = Secondary,
+    secondary = CardButton
 
     /* Other default colors to override
     background = Color.White,
@@ -33,7 +36,7 @@ private val LightColorPalette = lightColors(
 
 
 @Composable
-fun GoogleMockTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+fun GoogleMockTheme(darkTheme: Boolean = true, content: @Composable () -> Unit) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {
@@ -52,13 +55,13 @@ fun GoogleMockTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Compos
     val useDarkIcons = MaterialTheme.colors.isLight
 
     SideEffect {
-        // Update all of the system bar colors to be transparent, and use
-        // dark icons if we're in light theme
-        systemUiController.setSystemBarsColor(
-            color = Color.Transparent,
-            darkIcons = useDarkIcons
-        )
 
-        // setStatusBarsColor() and setNavigationBarColor() also exist
+            systemUiController.setStatusBarColor(
+                color = Primary
+            )
+
+            systemUiController.setNavigationBarColor(
+                color = Color.Black
+            )
     }
 }

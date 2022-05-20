@@ -11,13 +11,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.screen_search.components.HistoryListItem
 import com.example.googlemock.screen_search.components.SearchSearchBar
 import com.example.googlemock.screen_search.data.SearchHistoryData
 import com.example.googlemock.ui.theme.Secondary
 
 @Composable
-fun SearchScreen() {
+fun SearchScreen(
+    navController: NavHostController
+) {
 
     val history = remember { SearchHistoryData.historyList.shuffled() }
 
@@ -48,5 +52,5 @@ fun SearchScreen() {
 @Preview
 @Composable
 fun SearchScreenPreview() {
-    SearchScreen()
+    SearchScreen(navController = rememberNavController())
 }
