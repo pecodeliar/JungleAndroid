@@ -85,7 +85,7 @@ fun ArticleItem(article: Article) {
                     onClick = { favorite = !favorite },
                     modifier = Modifier
                         .padding(start = 20.dp)
-                        .size(18.dp)
+                        .size(19.dp)
                 ) {
                     Icon(
                         painterResource(
@@ -104,16 +104,16 @@ fun ArticleItem(article: Article) {
                     contentDescription = "Mock Share Button",
                     tint = Accent,
                     modifier = Modifier
-                        .padding(start = 20.dp)
-                        .size(18.dp)
+                        .padding(start = 30.dp)
+                        .size(19.dp)
                 )
                 Icon(
                     painterResource(id = R.drawable.dsc_more),
                     contentDescription = "Mock More Menu Button",
                     tint = Accent,
                     modifier = Modifier
-                        .padding(start = 20.dp)
-                        .size(18.dp)
+                        .padding(start = 30.dp)
+                        .size(19.dp)
                 )
             }
         }

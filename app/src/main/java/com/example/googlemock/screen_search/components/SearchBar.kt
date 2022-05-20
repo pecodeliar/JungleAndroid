@@ -20,6 +20,7 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.googlemock.ui.theme.CardButton
 import com.example.googlemock.ui.theme.Secondary
 
 @SuppressLint("UnrememberedMutableState")
@@ -50,7 +51,8 @@ fun SearchSearchBar(
                     .focusRequester(focusRequester),
                 colors = TextFieldDefaults.textFieldColors(
                     backgroundColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.DarkGray,
+                    unfocusedIndicatorColor = Color.Gray,
+                    focusedIndicatorColor = CardButton,
                 ),
                 value = text,
                 onValueChange = {
