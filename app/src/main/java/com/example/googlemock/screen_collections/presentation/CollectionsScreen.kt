@@ -82,7 +82,7 @@ fun CollectionsScreen(
                             text = "Quick Access",
                             color = Color.White,
                             fontSize = 23.sp,
-                            fontWeight = FontWeight.ExtraBold,
+                            fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(15.dp)
                         )
                         Text(
@@ -121,7 +121,7 @@ fun CollectionsScreen(
                             text = "Shows & movies",
                             color = Color.White,
                             fontSize = 23.sp,
-                            fontWeight = FontWeight.ExtraBold,
+                            fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(15.dp)
                         )
                         Icon(
@@ -169,7 +169,7 @@ fun CollectionsScreen(
                             text = "Shopping",
                             color = Color.White,
                             fontSize = 23.sp,
-                            fontWeight = FontWeight.ExtraBold,
+                            fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(15.dp)
                         )
                         Icon(
@@ -183,7 +183,7 @@ fun CollectionsScreen(
                     Text(
                         text = "People also search for",
                         color = Accent,
-                        fontWeight = FontWeight.ExtraBold,
+                        fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(7.dp)
                     )
                     LazyRow(contentPadding = PaddingValues(top = 8.dp, bottom = 10.dp)) {
@@ -217,7 +217,7 @@ fun CollectionsScreen(
                             text = "Recipes",
                             color = Color.White,
                             fontSize = 23.sp,
-                            fontWeight = FontWeight.ExtraBold,
+                            fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(15.dp)
                         )
                         Icon(
@@ -231,7 +231,7 @@ fun CollectionsScreen(
                     Text(
                         text = "People also search for",
                         color = Accent,
-                        fontWeight = FontWeight.ExtraBold,
+                        fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(7.dp)
                     )
                     LazyRow(contentPadding = PaddingValues(top = 8.dp, bottom = 10.dp)) {
@@ -265,7 +265,7 @@ fun CollectionsScreen(
                             text = "Books",
                             color = Color.White,
                             fontSize = 23.sp,
-                            fontWeight = FontWeight.ExtraBold,
+                            fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(15.dp)
                         )
                         Icon(
@@ -279,7 +279,7 @@ fun CollectionsScreen(
                     Text(
                         text = "People also search for",
                         color = Accent,
-                        fontWeight = FontWeight.ExtraBold,
+                        fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(7.dp)
                     )
                     LazyRow(contentPadding = PaddingValues(top = 8.dp, bottom = 10.dp)) {
@@ -313,7 +313,7 @@ fun CollectionsScreen(
                             text = "Collections",
                             color = Color.White,
                             fontSize = 23.sp,
-                            fontWeight = FontWeight.ExtraBold,
+                            fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(15.dp)
                         )
                         Icon(

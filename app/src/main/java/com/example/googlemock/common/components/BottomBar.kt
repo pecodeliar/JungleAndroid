@@ -7,12 +7,21 @@ import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.common.model.Screen
+import com.example.googlemock.ui.theme.CardButton
+import com.example.googlemock.ui.theme.Container
+import com.example.googlemock.ui.theme.NavBarFocus
+import com.example.googlemock.ui.theme.Secondary
 
 
 @Composable
@@ -28,7 +37,12 @@ fun BottomBar(
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation {
+    BottomNavigation(
+        modifier = Modifier,
+        backgroundColor = CardButton,
+        elevation = 5.dp,
+
+    ) {
         screens.forEach { screen ->
             AddItem(screen = screen, currentDestination = currentDestination, navController = navController)
         }
@@ -57,6 +71,14 @@ fun RowScope.AddItem(
         } == true,
         onClick = {
             navController.navigate(screen.route)
-        }
+        },
+        selectedContentColor = NavBarFocus,
+        unselectedContentColor = Color.Gray
     )
+}
+
+@Preview
+@Composable
+fun BottomBarPreview() {
+    BottomBar(navController = rememberNavController())
 }
