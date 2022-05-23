@@ -5,57 +5,60 @@ import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.googlemock.R
-import com.example.googlemock.ui.theme.CardButton
+import com.example.googlemock.ui.theme.Accent
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun PreferenceMenu() {
 
-    val state = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
-    val scope = rememberCoroutineScope()
-
     val context = LocalContext.current
 
-
-    ModalBottomSheetLayout(
-        sheetBackgroundColor = CardButton,
-        sheetElevation = 5.dp,
-        sheetShape = RoundedCornerShape(topStart = 30.dp),
-        sheetState = state,
-
-        sheetContent = {
-            Surface(
-                color = CardButton
-            ) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(50.dp),
-                    contentAlignment = Alignment.CenterEnd
-                ) {
-                    Text(
-                        text = "Preferences & feedback",
-                        color = Color.White,
-                        modifier = Modifier.padding(10.dp)
-                    )
-                }
-                Divider(color = Color.DarkGray, thickness = 1.dp)
-
-            }
-        }
+    Column(
+        modifier = Modifier
     ) {
-
+        Text(
+            text = "Preferences & feedback",
+            color = Color.White,
+            modifier = Modifier.padding(10.dp),
+            fontWeight = FontWeight.Bold
+        )
+        Divider(color = Color.DarkGray, thickness = 1.dp)
+        PreferenceMenuItem(
+            context = context,
+            icon = R.drawable.dsc_dislike,
+            text = "Not interested in this"
+        )
+        PreferenceMenuItem(
+            context = context,
+            icon = R.drawable.dsc_dont_show,
+            text = "Don't show content from this source"
+        )
+        PreferenceMenuItem(
+            context = context,
+            icon = R.drawable.dsc_manage,
+            text = "Manage channels and interests"
+        )
+        PreferenceMenuItem(
+            context = context,
+            icon = R.drawable.dsc_report,
+            text = "Report this"
+        )
+        PreferenceMenuItem(
+            context = context,
+            icon = R.drawable.dsc_feedback,
+            text = "Send feedback"
+        )
     }
 
 }
@@ -72,7 +75,7 @@ fun PreferenceMenuItem(
             .padding(10.dp)
             .clickable {
                 Toast
-                    .makeText(context, text, Toast.LENGTH_SHORT)
+                    .makeText(context, "Too bad, so sad.", Toast.LENGTH_SHORT)
                     .show()
             },
         verticalAlignment = Alignment.CenterVertically
@@ -82,11 +85,20 @@ fun PreferenceMenuItem(
             contentDescription = "Icon",
             modifier = Modifier
                 .padding(4.dp)
-                .size(25.dp)
+                .size(25.dp),
+            tint = Accent
         )
         Spacer(modifier = Modifier.padding(horizontal = 10.dp))
         Text(
-            text = text
+            text = text,
+            color = Color.White
         )
     }
+}
+
+
+@Preview
+@Composable
+fun BottomSheetContentPreview() {
+    PreferenceMenu()
 }

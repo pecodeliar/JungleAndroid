@@ -3,10 +3,7 @@ package com.example.googlemock.screen_discover.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Divider
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,9 +18,17 @@ import androidx.compose.ui.unit.sp
 import com.example.googlemock.screen_discover.model.Article
 import com.example.googlemock.R
 import com.example.googlemock.ui.theme.Accent
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ArticleItem(article: Article) {
+fun ArticleItem(
+    article: Article,
+    scope: CoroutineScope,
+    state: ModalBottomSheetState
+) {
 
     var favorite by remember { mutableStateOf(article.liked) }
 
@@ -107,14 +112,22 @@ fun ArticleItem(article: Article) {
                         .padding(start = 30.dp)
                         .size(19.dp)
                 )
-                Icon(
-                    painterResource(id = R.drawable.dsc_more),
-                    contentDescription = "Mock More Menu Button",
-                    tint = Accent,
+                IconButton(
+                    onClick = {
+                    scope.launch {
+                        state.show()
+                        }
+                    },
                     modifier = Modifier
-                        .padding(start = 30.dp)
+                        .padding(start = 20.dp)
                         .size(19.dp)
-                )
+                ) {
+                    Icon(
+                        painterResource(id = R.drawable.dsc_more),
+                        contentDescription = "Mock More Menu Button",
+                        tint = Accent
+                    )
+                }
             }
         }
         Divider(color = Color.DarkGray, thickness = 1.dp)
@@ -122,8 +135,18 @@ fun ArticleItem(article: Article) {
 }
 
 
+@OptIn(ExperimentalMaterialApi::class)
 @Preview
 @Composable
 fun ArticleItemPreview() {
-    ArticleItem(article = Article(R.drawable.prv_test_logo, R.drawable.prv_test_wide, "Strawhat Pirates find the One Piece!", "ComicCon", "7h"))
+    val modalBottomSheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
+    val scope = rememberCoroutineScope()
+    ArticleItem(
+        article = Article(R.drawable.prv_test_logo,
+            R.drawable.prv_test_wide,
+            "Strawhat Pirates find the One Piece!",
+            "ComicCon", "7h"),
+        scope = scope,
+        state = modalBottomSheetState
+    )
 }

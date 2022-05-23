@@ -6,10 +6,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -31,10 +31,14 @@ import com.example.googlemock.screen_discover.data.StoryData
 import com.example.googlemock.screen_discover.model.Article
 import com.example.googlemock.screen_discover.repository.ArticleRepository
 import com.example.googlemock.ui.theme.Primary
+import kotlinx.coroutines.CoroutineScope
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun DiscoverScreen(
-    navController: NavHostController
+    navController: NavHostController,
+    scope: CoroutineScope,
+    state: ModalBottomSheetState
 ) {
 
     val articles = remember { ArticleData.articleList.shuffled() }
@@ -81,7 +85,7 @@ fun DiscoverScreen(
                 }
             }
             items(2) {
-                    index -> ArticleItem(article = articles[index])
+                    index -> ArticleItem(article = articles[index], scope, state)
             }
             item {
                 Text(
@@ -103,7 +107,7 @@ fun DiscoverScreen(
             items(
                 items = articles,
                 itemContent = {
-                    ArticleItem(article = it)
+                    ArticleItem(article = it, scope, state)
                 }
             )
             //This is to make sure that the content isn't hidden by the bottom navbar
@@ -185,8 +189,11 @@ fun DiscoverScreen(
 
 
 
+@OptIn(ExperimentalMaterialApi::class)
 @Preview
 @Composable
 fun DiscoverScreenPreview() {
-    DiscoverScreen(navController = rememberNavController())
+    val modalBottomSheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
+    val scope = rememberCoroutineScope()
+    DiscoverScreen(navController = rememberNavController(), state = modalBottomSheetState, scope = scope)
 }
