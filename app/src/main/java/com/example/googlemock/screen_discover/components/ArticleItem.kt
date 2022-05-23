@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.sp
 import com.example.googlemock.screen_discover.model.Article
 import com.example.googlemock.R
 import com.example.googlemock.ui.theme.Accent
+import com.google.accompanist.systemuicontroller.SystemUiController
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch

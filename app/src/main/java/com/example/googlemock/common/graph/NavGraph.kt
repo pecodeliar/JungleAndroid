@@ -39,7 +39,8 @@ fun SetupNavGraph(
                 },
                 sheetState = modalBottomSheetState,
                 sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
-                sheetBackgroundColor = CardButton
+                sheetBackgroundColor = CardButton,
+                sheetElevation = 10.dp
             ) {
                 Scaffold(
                 ) {

@@ -40,7 +40,7 @@ fun BottomBar(
     BottomNavigation(
         modifier = Modifier,
         backgroundColor = CardButton,
-        elevation = 5.dp,
+        elevation = 1.dp,
 
     ) {
         screens.forEach { screen ->
