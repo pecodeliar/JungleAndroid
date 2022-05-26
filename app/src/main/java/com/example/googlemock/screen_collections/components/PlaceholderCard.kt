@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import com.example.googlemock.R
 import com.example.googlemock.screen_collections.model.Placeholder
 import com.example.googlemock.ui.theme.CardButton
+import com.example.googlemock.ui.theme.myFontFamily
 
 //The card that shows when there hasn't been anything saved
 @Composable
@@ -52,6 +53,7 @@ fun PlaceholderCard(placeholder: Placeholder) {
                     text = "Save ${placeholder.category} and find inspiration on what to ${placeholder.verb} next",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
+                    fontFamily = myFontFamily,
                     modifier = Modifier
                         .padding(bottom = 8.dp),
                     color = Color.White,
@@ -68,6 +70,7 @@ fun PlaceholderCard(placeholder: Placeholder) {
                         text = "Go to ${placeholder.button}",
                         color = Color.White,
                         fontWeight = FontWeight.Light,
+                        fontFamily = myFontFamily,
                         letterSpacing = 0.5.sp
                     )
                 }

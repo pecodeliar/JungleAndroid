@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -31,6 +32,7 @@ import com.example.googlemock.screen_discover.data.StoryData
 import com.example.googlemock.screen_discover.model.Article
 import com.example.googlemock.screen_discover.repository.ArticleRepository
 import com.example.googlemock.ui.theme.Primary
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.CoroutineScope
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -43,6 +45,19 @@ fun DiscoverScreen(
 
     val articles = remember { ArticleData.articleList.shuffled() }
     val stories = remember { StoryData.storiesList }
+
+    val systemUiController = rememberSystemUiController()
+
+    SideEffect {
+
+        systemUiController.setStatusBarColor(
+            color = Primary
+        )
+
+        systemUiController.setNavigationBarColor(
+            color = Color.Black
+        )
+    }
 
     Surface(
         modifier = Modifier

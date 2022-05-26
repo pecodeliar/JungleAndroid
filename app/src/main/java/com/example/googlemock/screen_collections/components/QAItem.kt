@@ -23,6 +23,7 @@ import com.example.googlemock.R
 import com.example.googlemock.screen_collections.model.Visited
 import com.example.googlemock.ui.theme.Container
 import com.example.googlemock.ui.theme.Typography
+import com.example.googlemock.ui.theme.myFontFamily
 
 @Composable
 fun QAItem(visited: Visited) {
@@ -58,12 +59,14 @@ fun QAItem(visited: Visited) {
                 color = Color.White,
                 fontSize = 17.sp,
                 fontWeight = FontWeight.Bold,
+                fontFamily = myFontFamily,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
             Text(
                 text = visited.text,
                 color = Container,
+                fontFamily = myFontFamily,
                 fontSize = 13.sp,
                 fontWeight = FontWeight.Normal
             )

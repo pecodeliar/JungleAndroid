@@ -50,18 +50,14 @@ fun GoogleMockTheme(darkTheme: Boolean = true, content: @Composable () -> Unit) 
         content = content
     )
 
-    // Remember a SystemUiController
     val systemUiController = rememberSystemUiController()
     val useDarkIcons = MaterialTheme.colors.isLight
 
     SideEffect {
 
-            systemUiController.setStatusBarColor(
-                color = Primary
-            )
-
-            systemUiController.setNavigationBarColor(
-                color = Color.Black
-            )
+        systemUiController.setNavigationBarColor(
+            color = Color.Black
+        )
     }
+
 }

@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.sp
 import com.example.googlemock.screen_collections.model.Suggestion
 import com.example.googlemock.ui.theme.Accent
 import com.example.googlemock.ui.theme.CardButton
+import com.example.googlemock.ui.theme.myFontFamily
 
 @Composable
 fun SearchSuggestion(search: Suggestion) {
@@ -52,6 +53,7 @@ fun SearchSuggestion(search: Suggestion) {
                 modifier = Modifier.padding(start = 3.dp, end = 4.dp),
                 fontSize = 16.sp,
                 letterSpacing = 0.2.sp,
+                fontFamily = myFontFamily,
                 fontWeight = FontWeight.Light
             )
             Button(onClick = { /*TODO*/ },

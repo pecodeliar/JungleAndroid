@@ -18,10 +18,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.common.model.Screen
-import com.example.googlemock.ui.theme.CardButton
-import com.example.googlemock.ui.theme.Container
-import com.example.googlemock.ui.theme.NavBarFocus
-import com.example.googlemock.ui.theme.Secondary
+import com.example.googlemock.ui.theme.*
 
 
 @Composable
@@ -58,7 +55,10 @@ fun RowScope.AddItem(
 ) {
     BottomNavigationItem(
         label = {
-            Text(text = screen.title)
+            Text(
+                text = screen.title,
+                fontFamily = myFontFamily
+            )
         },
         icon = {
             Icon(

@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import com.example.googlemock.screen_discover.model.Article
 import com.example.googlemock.R
 import com.example.googlemock.ui.theme.Accent
+import com.example.googlemock.ui.theme.myFontFamily
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.CoroutineScope
@@ -52,8 +53,9 @@ fun ArticleItem(
         Text(
             text = article.title,
             color = Color.White,
-            fontSize = 25.sp,
+            fontSize = 21.sp,
             fontWeight = FontWeight.Normal,
+            fontFamily = myFontFamily,
             modifier = Modifier.padding(bottom = 10.dp, top = 10.dp)
         )
         Row(modifier = Modifier
