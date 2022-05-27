@@ -2,7 +2,9 @@ package com.example.googlemock.screen_discover.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -11,13 +13,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.googlemock.R
+import com.example.googlemock.ui.theme.Accent
 import com.example.googlemock.ui.theme.CardButton
 import com.example.googlemock.ui.theme.myFontFamily
 
@@ -50,15 +56,74 @@ fun PFPMenu() {
                         modifier = Modifier.alpha(ContentAlpha.medium)
                     )
                 }
-                Spacer(Modifier.width(80.dp))
+                Spacer(Modifier.width(70.dp))
                 Image(
                     painterResource(id = R.drawable.junglebetter),
                     contentDescription = "Logo",
                     modifier = Modifier
                         .width(150.dp)
-                        .fillMaxHeight()
+                        .fillMaxHeight().padding(vertical = 7.dp)
                 )
             }
+            //Accounts Section
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 13.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(horizontal = 10.dp)
+                ) {
+                    Image(
+                        painterResource(id = R.drawable.vixen),
+                        contentDescription = "",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .width(38.dp)
+                            .height(38.dp)
+                            .clip(RoundedCornerShape(40.dp))
+                    )
+                    Column(
+                        modifier = Modifier.padding(horizontal = 10.dp)
+                    ) {
+                        Text(
+                            text = "Mari McCabe",
+                            color = Color.White,
+                            fontSize = 15.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            text = "mccabe.mari@jmail.com",
+                            color = Accent,
+                            fontSize = 10.sp
+                        )
+                    }
+                }
+                Row(
+                    modifier = Modifier.padding(end = 10.dp)
+                ) {
+                    IconButton(
+                        onClick = { /*TODO*/ },
+                        modifier = Modifier
+                            .size(20.dp)
+                            .fillMaxHeight()
+                            .border(1.dp, Accent, shape = CircleShape)
+                    ) {
+                        Icon(
+                            painterResource(id = R.drawable.dsc_arrow),
+                            contentDescription = "More Accounts Button",
+                            tint = Color.White,
+                            modifier = Modifier
+                                .rotate(270f)
+                                .padding(3.dp)
+                        )
+                    }
+                }
+            }
+            //End of Accounts Section
             Divider(color = Color.Gray, thickness = 1.dp, modifier = Modifier.fillMaxWidth())
             //History Section
             Row(
