@@ -32,6 +32,7 @@ fun PFPMenu() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
+            .padding(horizontal = 20.dp)
             .background(CardButton, RoundedCornerShape(10.dp))
     ) {
         Column(
@@ -56,13 +57,14 @@ fun PFPMenu() {
                         modifier = Modifier.alpha(ContentAlpha.medium)
                     )
                 }
-                Spacer(Modifier.width(70.dp))
+                Spacer(Modifier.width(60.dp))
                 Image(
                     painterResource(id = R.drawable.junglebetter),
                     contentDescription = "Logo",
                     modifier = Modifier
                         .width(150.dp)
-                        .fillMaxHeight().padding(vertical = 7.dp)
+                        .fillMaxHeight()
+                        .padding(vertical = 7.dp)
                 )
             }
             //Accounts Section
@@ -123,6 +125,26 @@ fun PFPMenu() {
                     }
                 }
             }
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Button(
+                    onClick = { /*TODO*/ },
+                    modifier = Modifier
+                        .border(1.dp, Color.Gray, shape = CircleShape),
+                    colors = ButtonDefaults.buttonColors(backgroundColor = CardButton)
+                ) {
+                    Text(
+                        text = "Manage your Jungle Account",
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = myFontFamily,
+                        letterSpacing = 0.5.sp
+                    )
+                }
+            }
             //End of Accounts Section
             Divider(color = Color.Gray, thickness = 1.dp, modifier = Modifier.fillMaxWidth())
             //History Section
@@ -133,6 +155,7 @@ fun PFPMenu() {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Row(
+                    modifier = Modifier.padding(vertical = 10.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
@@ -140,8 +163,7 @@ fun PFPMenu() {
                         contentDescription = "",
                         tint = Color.White,
                         modifier = Modifier
-                            .size(55.dp)
-                            .padding(horizontal = 18.dp, vertical = 14.dp)
+                            .padding(horizontal = 18.dp)
                     )
                     Text(
                         text = "Search history",
@@ -173,22 +195,22 @@ fun PFPMenu() {
                         color = Color.White,
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(vertical = 14.dp)
+                        modifier = Modifier.padding(vertical = 10.dp)
                     )
                 }
             }
             //End of History Section
             Divider(color = Color.Gray, thickness = 1.dp, modifier = Modifier.fillMaxWidth())
             Row(
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(vertical = 10.dp)
             ) {
                 Icon(
                     painterResource(id = R.drawable.dsc_recent),
                     contentDescription = "",
                     tint = Color.White,
                     modifier = Modifier
-                        .size(55.dp)
-                        .padding(horizontal = 18.dp, vertical = 14.dp)
+                        .padding(horizontal = 18.dp)
                 )
                 Text(
                     text = "Recent",
@@ -198,6 +220,7 @@ fun PFPMenu() {
                 )
             }
             Row(
+                modifier = Modifier.padding(vertical = 10.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
@@ -205,8 +228,7 @@ fun PFPMenu() {
                     contentDescription = "",
                     tint = Color.White,
                     modifier = Modifier
-                        .size(55.dp)
-                        .padding(horizontal = 18.dp, vertical = 12.dp)
+                        .padding(horizontal = 18.dp)
                 )
                 Text(
                     text = "Reminders",
@@ -217,6 +239,7 @@ fun PFPMenu() {
             }
             Divider(color = Color.Gray, thickness = 1.dp, modifier = Modifier.fillMaxWidth())
             Row(
+                modifier = Modifier.padding(vertical = 10.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
@@ -224,8 +247,7 @@ fun PFPMenu() {
                     contentDescription = "",
                     tint = Color.White,
                     modifier = Modifier
-                        .size(55.dp)
-                        .padding(horizontal = 18.dp, vertical = 12.dp)
+                        .padding(horizontal = 18.dp)
                 )
                 Text(
                     text = "Your data in Search",
@@ -235,6 +257,7 @@ fun PFPMenu() {
                 )
             }
             Row(
+                modifier = Modifier.padding(vertical = 10.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
@@ -242,8 +265,7 @@ fun PFPMenu() {
                     contentDescription = "",
                     tint = Color.White,
                     modifier = Modifier
-                        .size(55.dp)
-                        .padding(horizontal = 18.dp, vertical = 12.dp)
+                        .padding(horizontal = 18.dp)
                 )
                 Text(
                     text = "Settings",
@@ -253,6 +275,7 @@ fun PFPMenu() {
                 )
             }
             Row(
+                modifier = Modifier.padding(vertical = 10.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
@@ -260,8 +283,7 @@ fun PFPMenu() {
                     contentDescription = "",
                     tint = Color.White,
                     modifier = Modifier
-                        .size(55.dp)
-                        .padding(horizontal = 18.dp, vertical = 12.dp)
+                        .padding(horizontal = 18.dp)
                 )
                 Text(
                     text = "Help & feedback",
