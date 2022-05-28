@@ -9,7 +9,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -29,6 +29,9 @@ import com.example.googlemock.ui.theme.myFontFamily
 
 @Composable
 fun PFPMenu() {
+
+    var moreAccounts by remember { mutableStateOf(false) }
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -57,7 +60,7 @@ fun PFPMenu() {
                         modifier = Modifier.alpha(ContentAlpha.medium)
                     )
                 }
-                Spacer(Modifier.width(60.dp))
+                Spacer(Modifier.width(50.dp))
                 Image(
                     painterResource(id = R.drawable.junglebetter),
                     contentDescription = "Logo",
@@ -108,20 +111,31 @@ fun PFPMenu() {
                     modifier = Modifier.padding(end = 10.dp)
                 ) {
                     IconButton(
-                        onClick = { /*TODO*/ },
+                        onClick = { moreAccounts = !moreAccounts },
                         modifier = Modifier
                             .size(20.dp)
                             .fillMaxHeight()
                             .border(1.dp, Accent, shape = CircleShape)
                     ) {
-                        Icon(
-                            painterResource(id = R.drawable.dsc_arrow),
-                            contentDescription = "More Accounts Button",
-                            tint = Color.White,
-                            modifier = Modifier
-                                .rotate(270f)
-                                .padding(3.dp)
-                        )
+                        if (moreAccounts) {
+                            Icon(
+                                painterResource(id = R.drawable.dsc_arrow),
+                                contentDescription = "More Accounts Button",
+                                tint = Color.White,
+                                modifier = Modifier
+                                    .rotate(270f)
+                                    .padding(3.dp)
+                            )
+                        } else {
+                            Icon(
+                                painterResource(id = R.drawable.dsc_arrow),
+                                contentDescription = "More Accounts Button",
+                                tint = Color.White,
+                                modifier = Modifier
+                                    .rotate(90f)
+                                    .padding(3.dp)
+                            )
+                        }
                     }
                 }
             }
@@ -142,6 +156,67 @@ fun PFPMenu() {
                         fontWeight = FontWeight.Bold,
                         fontFamily = myFontFamily,
                         letterSpacing = 0.5.sp
+                    )
+                }
+            }
+            if (moreAccounts) {
+                Divider(
+                    color = Color.Gray,
+                    thickness = 1.dp, modifier =
+                    Modifier.fillMaxWidth().padding(start = 60.dp)
+                )
+                Row(
+                    modifier = Modifier.padding(vertical = 5.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        painterResource(id = R.drawable.dsc_without),
+                        contentDescription = "",
+                        tint = Color.White,
+                        modifier = Modifier
+                            .padding(horizontal = 18.dp)
+                    )
+                    Text(
+                        text = "Use without an account",
+                        color = Color.White,
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+                Row(
+                    modifier = Modifier.padding(vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        painterResource(id = R.drawable.dsc_add_acc),
+                        contentDescription = "",
+                        tint = Color.White,
+                        modifier = Modifier
+                            .padding(horizontal = 18.dp)
+                    )
+                    Text(
+                        text = "Add another account",
+                        color = Color.White,
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+                Row(
+                    modifier = Modifier.padding(vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        painterResource(id = R.drawable.dsc_mng_acc),
+                        contentDescription = "",
+                        tint = Color.White,
+                        modifier = Modifier
+                            .padding(horizontal = 18.dp)
+                    )
+                    Text(
+                        text = "Manage accounts on this device",
+                        color = Color.White,
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Bold
                     )
                 }
             }
@@ -185,7 +260,7 @@ fun PFPMenu() {
                 modifier = Modifier,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Spacer(modifier = Modifier.padding(horizontal = 28.dp))
+                Spacer(modifier = Modifier.padding(horizontal = 30.dp))
                 Column(
                     modifier = Modifier
                 ) {
@@ -224,7 +299,7 @@ fun PFPMenu() {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
-                    painterResource(id = R.drawable.dsc_favorite),
+                    painterResource(id = R.drawable.dsc_reminders),
                     contentDescription = "",
                     tint = Color.White,
                     modifier = Modifier
