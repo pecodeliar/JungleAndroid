@@ -19,10 +19,7 @@ import com.example.googlemock.screen_discover.model.Article
 import com.example.googlemock.R
 import com.example.googlemock.ui.theme.Accent
 import com.example.googlemock.ui.theme.myFontFamily
-import com.google.accompanist.systemuicontroller.SystemUiController
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -128,7 +125,7 @@ fun ArticleItem(
                 ) {
                     Icon(
                         painterResource(id = R.drawable.dsc_more),
-                        contentDescription = "More Menu for Prefernces",
+                        contentDescription = "More Menu for Preferences",
                         tint = Accent
                     )
                 }

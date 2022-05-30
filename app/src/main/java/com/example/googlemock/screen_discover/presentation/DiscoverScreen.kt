@@ -13,9 +13,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Alignment.Companion.BottomCenter
-import androidx.compose.ui.Alignment.Companion.CenterVertically
-import androidx.compose.ui.Alignment.Companion.TopEnd
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
@@ -24,12 +21,9 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.DpOffset
-import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Popup
-import androidx.compose.ui.window.PopupProperties
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.R
@@ -39,8 +33,6 @@ import com.example.googlemock.screen_discover.components.PFPMenu
 import com.example.googlemock.screen_discover.components.StoryItem
 import com.example.googlemock.screen_discover.data.ArticleData
 import com.example.googlemock.screen_discover.data.StoryData
-import com.example.googlemock.screen_discover.model.Article
-import com.example.googlemock.screen_discover.repository.ArticleRepository
 import com.example.googlemock.ui.theme.CardButton
 import com.example.googlemock.ui.theme.Primary
 import com.google.accompanist.systemuicontroller.rememberSystemUiController

@@ -57,7 +57,7 @@ object ArticleData {
         Article(
             logo = R.drawable.dumpling,
             image = R.drawable.poandfam,
-            title = "Po to Open New Restuarant with Dad and Adoptive Father",
+            title = "Po to Open New Restaurant with Dad and Adoptive Father",
             source = "Ramsey Rants",
             date = "6hr"
         ),

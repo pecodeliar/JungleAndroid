@@ -88,65 +88,6 @@ fun DiscoverSearchBar(
             }
         }
     }
-    /*Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(55.dp)
-            .clip(RoundedCornerShape(40.dp)),
-        color = Secondary
-    ) {
-        TextField(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable {
-                    navController.navigate(route = Screen.Search.route)
-                },
-            value = text,
-            onValueChange = {
-                onTextChange(it)
-            },
-            placeholder = {
-                Text(
-                    modifier = Modifier.alpha(ContentAlpha.medium),
-                    text = "Search...",
-                    color = Accent
-                )
-            },
-            textStyle = TextStyle(
-                fontSize = MaterialTheme.typography.subtitle1.fontSize
-            ),
-            singleLine = true,
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Default.Search,
-                    contentDescription = "Search Icon",
-                    tint = Accent,
-                    modifier = Modifier.alpha(ContentAlpha.medium)
-                )
-            },
-            trailingIcon = {
-                Row(modifier = Modifier) {
-                    Icon(
-                        painterResource(id = R.drawable.cmn_mic),
-                        contentDescription = "Phone Icon",
-                        tint = Color.Red,
-                        modifier = Modifier.padding(
-                            end = 12.dp
-                        )
-                    )
-                    Icon(
-                        painterResource(id = R.drawable.dsc_camera),
-                        contentDescription = "Email Icon",
-                        tint = com.example.googlemock.ui.theme.TextButton,
-                        modifier = Modifier.padding(
-                            start = 12.dp,
-                            end = 15.dp
-                        )
-                    )
-                }
-            }
-        )
-    }*/
 }
 
 @Preview
