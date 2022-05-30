@@ -67,7 +67,7 @@ fun BookmarkBox(bookmark: Bookmark) {
                 ) {
                     Icon(
                         painterResource(id = R.drawable.col_bookmark),
-                        contentDescription = "Bookmark",
+                        contentDescription = null,
                         tint = TextButton,
                         modifier = Modifier
                             .padding(top = 30.dp)

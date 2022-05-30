@@ -41,7 +41,7 @@ fun QAItem(visited: Visited) {
         ) {
             Image(
                 painter = painterResource(id = visited.logo),
-                contentDescription = "Site Logo",
+                contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.padding(15.dp)
             )

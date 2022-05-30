@@ -43,7 +43,7 @@ fun ArticleItem(
     ) {
         Image(
             painterResource(article.image),
-            contentDescription = "Article Image",
+            contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxWidth()
@@ -67,7 +67,7 @@ fun ArticleItem(
             Row(modifier = Modifier) {
                 Image(
                     painterResource(article.logo),
-                    contentDescription = "Company Logo",
+                    contentDescription = null,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .width(16.dp)
@@ -104,7 +104,7 @@ fun ArticleItem(
                                 R.drawable.dsc_favorite
                             }
                         ),
-                        contentDescription = "Mock Favorite Button",
+                        contentDescription = "Favorite Button",
                         tint = Accent
                     )
                 }
@@ -128,7 +128,7 @@ fun ArticleItem(
                 ) {
                     Icon(
                         painterResource(id = R.drawable.dsc_more),
-                        contentDescription = "Mock More Menu Button",
+                        contentDescription = "More Menu for Prefernces",
                         tint = Accent
                     )
                 }

@@ -31,7 +31,7 @@ fun HistoryListItem(history: SearchHistory) {
         ) {
             Icon(
                 painterResource(id = R.drawable.sch_clock),
-                contentDescription = "Clock",
+                contentDescription = null,
                 tint = Color.Gray,
                 modifier = Modifier.size(25.dp)
             )
@@ -45,7 +45,7 @@ fun HistoryListItem(history: SearchHistory) {
         }
         Icon(
             painterResource(id = R.drawable.sch_arrow),
-            contentDescription = "Arrow",
+            contentDescription = null,
             tint = Color.Gray,
             modifier = Modifier
                 .size(23.dp)

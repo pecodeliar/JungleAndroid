@@ -40,7 +40,7 @@ fun SearchSuggestion(search: Suggestion) {
         ) {
             Icon(
                 imageVector = Icons.Default.Search,
-                contentDescription = "Search Icon",
+                contentDescription = null,
                 tint = Accent,
                 modifier = Modifier
                     .alpha(ContentAlpha.medium)
@@ -65,7 +65,7 @@ fun SearchSuggestion(search: Suggestion) {
             ) {
                 Icon(
                     imageVector = Icons.Default.Close,
-                    contentDescription = "Search Icon",
+                    contentDescription = "Close Icon",
                     tint = Color.White,
                     modifier = Modifier.alpha(ContentAlpha.medium)
                 )

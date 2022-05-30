@@ -52,7 +52,7 @@ fun DiscoverSearchBar(
             ) {
                 Icon(
                     imageVector = Icons.Default.Search,
-                    contentDescription = "Search Icon",
+                    contentDescription = null,
                     tint = Accent,
                     modifier = Modifier.alpha(ContentAlpha.medium).padding(end = 7.dp)
                 )
@@ -70,7 +70,7 @@ fun DiscoverSearchBar(
             ) {
                 Icon(
                     painterResource(id = R.drawable.cmn_mic),
-                    contentDescription = "Phone Icon",
+                    contentDescription = null,
                     tint = Color.Red,
                     modifier = Modifier.padding(
                         end = 12.dp
@@ -78,7 +78,7 @@ fun DiscoverSearchBar(
                 )
                 Icon(
                     painterResource(id = R.drawable.dsc_camera),
-                    contentDescription = "Email Icon",
+                    contentDescription = null,
                     tint = com.example.googlemock.ui.theme.TextButton,
                     modifier = Modifier.padding(
                         start = 10.dp,

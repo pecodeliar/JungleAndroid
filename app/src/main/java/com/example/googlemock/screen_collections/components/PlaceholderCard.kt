@@ -44,7 +44,7 @@ fun PlaceholderCard(placeholder: Placeholder) {
             ) {
                 Icon(
                     painterResource(id = R.drawable.col_twinkle),
-                    contentDescription = "Twinkle Stars",
+                    contentDescription = null,
                     tint = Color.White,
                     modifier = Modifier
                         .size(30.dp)
@@ -81,7 +81,7 @@ fun PlaceholderCard(placeholder: Placeholder) {
             ) {
                 Image(
                     painterResource(placeholder.graphic),
-                    contentDescription = "Graphic",
+                    contentDescription = null,
                     modifier = Modifier.fillMaxHeight(),
                     contentScale = ContentScale.FillHeight
                 )

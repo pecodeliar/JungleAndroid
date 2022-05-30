@@ -13,6 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+/JungleCollectionsScreen.png
+/JungleDiscoverScreen.png
+/JungleSearchScreen.png
 /JungleSearchScreen.png
 /JungleDiscoverScreen.png
 /JungleCollectionsScreen.png

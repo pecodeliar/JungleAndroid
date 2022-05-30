@@ -71,7 +71,7 @@ fun SearchSearchBar(
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Search,
-                        contentDescription = "Logo",
+                        contentDescription = null,
                         tint = Color.Red,
                     )
                 },

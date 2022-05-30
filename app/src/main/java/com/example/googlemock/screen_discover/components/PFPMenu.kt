@@ -48,7 +48,7 @@ fun PFPMenu() {
                 ) {
                     Image(
                         painterResource(id = R.drawable.vixen),
-                        contentDescription = "",
+                        contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .width(38.dp)
@@ -140,7 +140,7 @@ fun PFPMenu() {
                 ) {
                     Icon(
                         painterResource(id = R.drawable.dsc_without),
-                        contentDescription = "",
+                        contentDescription = null,
                         tint = Color.White,
                         modifier = Modifier
                             .padding(horizontal = 18.dp)
@@ -159,7 +159,7 @@ fun PFPMenu() {
                 ) {
                     Icon(
                         painterResource(id = R.drawable.dsc_add_acc),
-                        contentDescription = "",
+                        contentDescription = null,
                         tint = Color.White,
                         modifier = Modifier
                             .padding(horizontal = 18.dp)
@@ -178,7 +178,7 @@ fun PFPMenu() {
                 ) {
                     Icon(
                         painterResource(id = R.drawable.dsc_mng_acc),
-                        contentDescription = "",
+                        contentDescription = null,
                         tint = Color.White,
                         modifier = Modifier
                             .padding(horizontal = 18.dp)
@@ -207,7 +207,7 @@ fun PFPMenu() {
                 ) {
                     Icon(
                         painterResource(id = R.drawable.dsc_history),
-                        contentDescription = "",
+                        contentDescription = null,
                         tint = Color.White,
                         modifier = Modifier
                             .padding(horizontal = 18.dp)
@@ -257,7 +257,7 @@ fun PFPMenu() {
             ) {
                 Icon(
                     painterResource(id = R.drawable.dsc_recent),
-                    contentDescription = "",
+                    contentDescription = null,
                     tint = Color.White,
                     modifier = Modifier
                         .padding(horizontal = 18.dp)
@@ -276,7 +276,7 @@ fun PFPMenu() {
             ) {
                 Icon(
                     painterResource(id = R.drawable.dsc_reminders),
-                    contentDescription = "",
+                    contentDescription = null,
                     tint = Color.White,
                     modifier = Modifier
                         .padding(horizontal = 18.dp)
@@ -296,7 +296,7 @@ fun PFPMenu() {
             ) {
                 Icon(
                     painterResource(id = R.drawable.dsc_data),
-                    contentDescription = "",
+                    contentDescription = null,
                     tint = Color.White,
                     modifier = Modifier
                         .padding(horizontal = 18.dp)
@@ -315,7 +315,7 @@ fun PFPMenu() {
             ) {
                 Icon(
                     painterResource(id = R.drawable.dsc_settings),
-                    contentDescription = "",
+                    contentDescription = null,
                     tint = Color.White,
                     modifier = Modifier
                         .padding(horizontal = 18.dp)
@@ -334,7 +334,7 @@ fun PFPMenu() {
             ) {
                 Icon(
                     painterResource(id = R.drawable.dsc_help),
-                    contentDescription = "",
+                    contentDescription = null,
                     tint = Color.White,
                     modifier = Modifier
                         .padding(horizontal = 18.dp)

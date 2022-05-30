@@ -38,7 +38,7 @@ fun StoryItem(story: Story) {
         ) {
             Image(
                 painter = painterResource(id = story.image),
-                contentDescription = "Story Image",
+                contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxWidth()
             )
@@ -67,7 +67,7 @@ fun StoryItem(story: Story) {
                 ) {
                     Image(
                         painterResource(story.logo),
-                        contentDescription = "Company Logo",
+                        contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .width(50.dp)
