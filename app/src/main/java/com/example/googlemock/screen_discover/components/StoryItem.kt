@@ -4,10 +4,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,9 +21,17 @@ import androidx.compose.ui.unit.sp
 import com.example.googlemock.R
 import com.example.googlemock.screen_discover.model.Story
 import com.example.googlemock.ui.theme.Accent
+import com.example.googlemock.ui.theme.myFontFamily
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun StoryItem(story: Story) {
+fun StoryItem(
+    story: Story,
+    scope: CoroutineScope,
+    state: ModalBottomSheetState
+) {
     Card(
         modifier = Modifier
             .clip(RoundedCornerShape(15.dp)),
@@ -33,7 +40,7 @@ fun StoryItem(story: Story) {
         Box(modifier = Modifier
             .height(350.dp)
             .width(250.dp)
-            .padding(8.dp)
+            .padding(4.dp)
             .clip(RoundedCornerShape(15.dp))
         ) {
             Image(
@@ -78,8 +85,9 @@ fun StoryItem(story: Story) {
                         Text(
                             text = story.title,
                             color = Color.White,
-                            fontSize = 22.sp,
-                            fontWeight = FontWeight.Normal,
+                            fontSize = 16.sp,
+                            fontFamily = myFontFamily,
+                            fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(bottom = 12.dp)
                         )
                         Row(modifier = Modifier
@@ -90,18 +98,26 @@ fun StoryItem(story: Story) {
                             Text(
                                 text = story.source,
                                 color = Color.White,
-                                fontSize = 15.sp,
+                                fontSize = 12.sp,
                                 fontWeight = FontWeight.Normal,
                                 modifier = Modifier.padding(bottom = 10.dp)
                             )
-                            Icon(
-                                painterResource(id = R.drawable.dsc_more),
-                                contentDescription = "Mock More Menu Button",
-                                tint = Color.White,
+                            IconButton(
+                                onClick = {
+                                    scope.launch {
+                                        state.show()
+                                    }
+                                },
                                 modifier = Modifier
                                     .padding(start = 20.dp)
-                                    .size(28.dp)
-                            )
+                                    .size(19.dp)
+                            ) {
+                                Icon(
+                                    painterResource(id = R.drawable.dsc_more),
+                                    contentDescription = "More Menu for Preferences",
+                                    tint = Accent
+                                )
+                            }
                         }
                     }
                 }
@@ -111,12 +127,18 @@ fun StoryItem(story: Story) {
 }
 
 
+@OptIn(ExperimentalMaterialApi::class)
 @Preview
 @Composable
 fun StoryItemPreview() {
+    val modalBottomSheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
+    val scope = rememberCoroutineScope()
     StoryItem(story = Story(
         R.drawable.prv_test_logo,
         R.drawable.prv_test_long,
         "She's the Bestest!!! Sensational Even",
-        "Marvel"))
+        "Marvel"),
+        scope = scope,
+        state = modalBottomSheetState
+    )
 }

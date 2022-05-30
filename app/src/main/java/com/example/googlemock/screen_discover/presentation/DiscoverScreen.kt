@@ -35,6 +35,7 @@ import com.example.googlemock.screen_discover.data.ArticleData
 import com.example.googlemock.screen_discover.data.StoryData
 import com.example.googlemock.ui.theme.CardButton
 import com.example.googlemock.ui.theme.Primary
+import com.example.googlemock.ui.theme.myFontFamily
 import kotlinx.coroutines.CoroutineScope
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -149,6 +150,7 @@ fun DiscoverScreen(
                     text = "Stories",
                     color = Color.White,
                     fontSize = 23.sp,
+                    fontFamily = myFontFamily,
                     fontWeight = FontWeight.ExtraBold,
                     modifier = Modifier.padding(15.dp)
                 )
@@ -156,7 +158,7 @@ fun DiscoverScreen(
                     items(
                         items = stories,
                         itemContent = {
-                            StoryItem(story = it)
+                            StoryItem(story = it, scope, state)
                         }
                     )
                 }
@@ -176,71 +178,6 @@ fun DiscoverScreen(
                 }
             }
         }
-        /* Column(
-            modifier = Modifier
-                .fillMaxSize(),
-        ) {
-            Row( //This is for the profile picture
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.End
-            ) {
-                Image(
-                    painterResource(id = R.drawable.vixen),
-                    contentDescription = "",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .width(34.dp)
-                        .height(34.dp)
-                        .clip(RoundedCornerShape(40.dp))
-                )
-            }
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.padding(bottom = 5.dp)
-            ) {
-                Image(
-                    painterResource(id = R.drawable.junglebetter),
-                    contentDescription = "Logo",
-                    modifier = Modifier
-                        .width(200.dp)
-                        .height(95.dp)
-                        .padding(top = 5.dp, bottom = 25.dp)
-                )
-                DiscoverSearchBar(
-                    text = "",
-                    onTextChange = {},
-                    navController = rememberNavController()
-                )
-            }
-            LazyColumn() {
-                items(2) {
-                        index -> ArticleItem(article = articles[index])
-                }
-                item {
-                    Text(
-                        text = "Stories",
-                        color = Color.White,
-                        fontSize = 23.sp,
-                        fontWeight = FontWeight.ExtraBold,
-                        modifier = Modifier.padding(15.dp)
-                    )
-                    LazyRow(contentPadding = PaddingValues(start = 5.dp)) {
-                        items(
-                            items = stories,
-                            itemContent = {
-                                StoryItem(story = it)
-                            }
-                        )
-                    }
-                }
-                items(
-                    items = articles,
-                    itemContent = {
-                        ArticleItem(article = it)
-                    }
-                )
-            }
-        }*/
     }
 }
 
