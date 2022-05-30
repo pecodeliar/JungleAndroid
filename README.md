@@ -12,14 +12,51 @@
 
 ## Overview
 
-This project is a frontend mock of the Android Google App.
+This project is a frontend mock of the Android Google App. My desire was to escape what is usually called "Tutorial Purgatory" and really come out of my comofrt zone of only start projects that have all the steps laid out for you. This projecy has helped me learn about great Kotlin features such as enums, making use of objects for the fake data and data classes as models. I also had a great time exploring Jetpack Compose for a lot the visual aspects of the component and learning how to make my own reuable components. I was able to learn more in depth about Navigation within Jetpack Compose and making use of Git to remember and save my progess throughout the project.
 \
 &nbsp;
 
-### Jungle Discover Screen
+## Discover Screen
 
 <p>
-  <img align="left" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="200"> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> 
+<ul>
+  <li>Learned about utilizing data classes to make models for the articles and stories. I made use of the Lazy Column to show the items with a scrolling ability.</li>
+  <li>Learned about modals which is activated when the more (three dots) button is clicked. The favorite (heart) button also makes use of a Boolean that will changed to a filled heart if clicked.</li>
+  <li>One of the main components of the screen is the "search bar". At first, it was made as an actual search bar, until I realized that it was just a cleverly disguised button. I mimic the look of a bar within the button and once the button is click, it autmatically leads you to the Search Screen.</li>
+</ul> 
+</p>
+
+<br>
+
+
+## Search Screen
+
+<p>
+  <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> 
+<ul>
+  <li>Once this screen is navigated to, it automatically displays the user's keyboard to mimic the behavior of the Google App.</li>
+  <li>Made use of an object to create fake history searches that are searches that did was made to help make this project.</li>
+</ul> 
+</p>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Collections Screen
+
+<p>
+  <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> 
+<ul>
+  <li>Made use of enum classes for the bookmark boxes and placeholder cards.</li>
+  <li>For each section, objects were used to mimic search suggestion data that was displayed using a Lazy Row component.</li>
+</ul> 
 </p>
 <br>
 <br>
@@ -29,40 +66,29 @@ This project is a frontend mock of the Android Google App.
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
-### Jungle Search Screen
+## Commonalities Between the Screens
 
 <p>
-  <img align="left" src="https://i.imgur.com/hHWK8RC.png" alt="HTML Badge" width="200"> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> 
+<ul>
+  <li>Learned about Navigation between screens for Jetpack for activities. I used a Nav host to help with displaying the screens as well as the navigation bar at the bottom of the application. This also helped with displaying the Modal that is used during on the Discover Screen with the use of a Scaffold.</li>
+  <li>The profile picture in the corner of the Discover and Collections Screen will display a Popup once clicked that mimics an accounts menu.</li>
+</ul> 
 </p>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <br>
 <br>
 <br>
 <br>
 <br>
 
-### Jungle Collections Screen
+## Installation
 
-<p>
-  <img align="left" src="https://i.imgur.com/mTDl36q.png" alt="HTML Badge" width="200"> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-</p>
+Due to this being a direct mock of the offical Google App, this app will not be released for commercial use. If you would still like to install, follow the below steps:
+1. Click the **Code** button.
+2. Once you see a menu popup, click the **Download Zip** button. This will save the project to your computer.
+3. Once the download is complete, find the file and unzip the conent (you can do this by double-clicking or right-clicking and pressing Extract Files).
+4. Open Android Studio and click **Open an existing Android Studio Project**. (If a prject is already open, you can select **File** > **New** > **Import Project**.
+5. Wait for Android Studio to open the project and press the **Run** button.
