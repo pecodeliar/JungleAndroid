@@ -20,6 +20,7 @@ import com.example.googlemock.R
 import com.example.googlemock.screen_collections.model.Bookmark
 import com.example.googlemock.ui.theme.Accent
 import com.example.googlemock.ui.theme.TextButton
+import com.example.googlemock.ui.theme.myFontFamily
 
 //The card that shows when there hasn't been anything they have tracked to that particular section
 @Composable
@@ -85,6 +86,7 @@ fun BookmarkBox(bookmark: Bookmark) {
                         color = Accent,
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Bold,
+                        fontFamily = myFontFamily,
                         modifier = Modifier.padding(top = 12.dp, end = 20.dp)
                     )
                     Text(
@@ -92,6 +94,7 @@ fun BookmarkBox(bookmark: Bookmark) {
                         color = Color.Gray,
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Normal,
+                        fontFamily = myFontFamily,
                         modifier = Modifier.padding(top = 3.dp, end = 20.dp)
                     )
                 }
@@ -105,6 +108,7 @@ fun BookmarkBox(bookmark: Bookmark) {
                             color = TextButton,
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
+                            fontFamily = myFontFamily,
                             modifier = Modifier.padding(top = 3.dp, end = 22.dp)
                         )
                     }

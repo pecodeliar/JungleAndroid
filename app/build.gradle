@@ -68,4 +68,6 @@ dependencies {
     //Status Bar
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.17.0"
 
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+
 }

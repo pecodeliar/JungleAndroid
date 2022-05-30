@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,6 +31,7 @@ import com.example.googlemock.screen_collections.data.*
 import com.example.googlemock.screen_collections.model.Bookmark
 import com.example.googlemock.screen_collections.model.Placeholder
 import com.example.googlemock.ui.theme.*
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
 fun CollectionsScreen(
@@ -41,6 +43,20 @@ fun CollectionsScreen(
     val shopping = remember { ShoppingSuggestionData.shopSuggestions }
     val shows = remember { ShowSuggestionData.showSuggestions }
     val visits = remember { VisitedData.visitedList }
+
+    val systemUiController = rememberSystemUiController()
+    val useDarkIcons = MaterialTheme.colors.isLight
+
+    SideEffect {
+
+        systemUiController.setStatusBarColor(
+            color = Secondary
+        )
+
+        systemUiController.setNavigationBarColor(
+            color = Color.Black
+        )
+    }
     
     Surface(
         modifier = Modifier
@@ -83,6 +99,7 @@ fun CollectionsScreen(
                             color = Color.White,
                             fontSize = 23.sp,
                             fontWeight = FontWeight.Bold,
+                            fontFamily = myFontFamily,
                             modifier = Modifier.padding(15.dp)
                         )
                         Text(
@@ -90,6 +107,7 @@ fun CollectionsScreen(
                             color = TextButton,
                             fontSize = 15.sp,
                             fontWeight = FontWeight.Bold,
+                            fontFamily = myFontFamily,
                             modifier = Modifier.padding(15.dp)
                         )
                     }
@@ -122,6 +140,7 @@ fun CollectionsScreen(
                             color = Color.White,
                             fontSize = 23.sp,
                             fontWeight = FontWeight.Bold,
+                            fontFamily = myFontFamily,
                             modifier = Modifier.padding(15.dp)
                         )
                         Icon(
@@ -136,6 +155,7 @@ fun CollectionsScreen(
                         text = "People also search for",
                         color = Accent,
                         fontWeight = FontWeight.ExtraBold,
+                        fontFamily = myFontFamily,
                         modifier = Modifier.padding(7.dp)
                     )
                     LazyRow(contentPadding = PaddingValues(top = 8.dp, bottom = 10.dp)) {
@@ -170,6 +190,7 @@ fun CollectionsScreen(
                             color = Color.White,
                             fontSize = 23.sp,
                             fontWeight = FontWeight.Bold,
+                            fontFamily = myFontFamily,
                             modifier = Modifier.padding(15.dp)
                         )
                         Icon(
@@ -184,6 +205,7 @@ fun CollectionsScreen(
                         text = "People also search for",
                         color = Accent,
                         fontWeight = FontWeight.Bold,
+                        fontFamily = myFontFamily,
                         modifier = Modifier.padding(7.dp)
                     )
                     LazyRow(contentPadding = PaddingValues(top = 8.dp, bottom = 10.dp)) {
@@ -217,6 +239,7 @@ fun CollectionsScreen(
                             text = "Recipes",
                             color = Color.White,
                             fontSize = 23.sp,
+                            fontFamily = myFontFamily,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(15.dp)
                         )
@@ -232,6 +255,7 @@ fun CollectionsScreen(
                         text = "People also search for",
                         color = Accent,
                         fontWeight = FontWeight.Bold,
+                        fontFamily = myFontFamily,
                         modifier = Modifier.padding(7.dp)
                     )
                     LazyRow(contentPadding = PaddingValues(top = 8.dp, bottom = 10.dp)) {
@@ -266,6 +290,7 @@ fun CollectionsScreen(
                             color = Color.White,
                             fontSize = 23.sp,
                             fontWeight = FontWeight.Bold,
+                            fontFamily = myFontFamily,
                             modifier = Modifier.padding(15.dp)
                         )
                         Icon(
@@ -280,6 +305,7 @@ fun CollectionsScreen(
                         text = "People also search for",
                         color = Accent,
                         fontWeight = FontWeight.Bold,
+                        fontFamily = myFontFamily,
                         modifier = Modifier.padding(7.dp)
                     )
                     LazyRow(contentPadding = PaddingValues(top = 8.dp, bottom = 10.dp)) {
@@ -312,6 +338,7 @@ fun CollectionsScreen(
                         Text(
                             text = "Collections",
                             color = Color.White,
+                            fontFamily = myFontFamily,
                             fontSize = 23.sp,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(15.dp)
@@ -333,6 +360,7 @@ fun CollectionsScreen(
                     ) {
                         Text(
                             text = "Create a collection",
+                            fontFamily = myFontFamily,
                             modifier = Modifier.fillMaxHeight(),
                             color = Accent,
                         )

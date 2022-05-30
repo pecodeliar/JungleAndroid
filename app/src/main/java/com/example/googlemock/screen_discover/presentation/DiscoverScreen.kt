@@ -1,44 +1,76 @@
 package com.example.googlemock.screen_discover.presentation
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.BottomCenter
+import androidx.compose.ui.Alignment.Companion.CenterVertically
+import androidx.compose.ui.Alignment.Companion.TopEnd
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.DpOffset
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Popup
+import androidx.compose.ui.window.PopupProperties
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.R
 import com.example.googlemock.screen_discover.components.ArticleItem
 import com.example.googlemock.screen_discover.components.DiscoverSearchBar
+import com.example.googlemock.screen_discover.components.PFPMenu
 import com.example.googlemock.screen_discover.components.StoryItem
 import com.example.googlemock.screen_discover.data.ArticleData
 import com.example.googlemock.screen_discover.data.StoryData
 import com.example.googlemock.screen_discover.model.Article
 import com.example.googlemock.screen_discover.repository.ArticleRepository
+import com.example.googlemock.ui.theme.CardButton
 import com.example.googlemock.ui.theme.Primary
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import kotlinx.coroutines.CoroutineScope
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun DiscoverScreen(
-    navController: NavHostController
+    navController: NavHostController,
+    scope: CoroutineScope,
+    state: ModalBottomSheetState
 ) {
 
     val articles = remember { ArticleData.articleList.shuffled() }
     val stories = remember { StoryData.storiesList }
+
+    val openMenu = remember { mutableStateOf(false) }
+
+    val systemUiController = rememberSystemUiController()
+
+    SideEffect {
+
+        systemUiController.setStatusBarColor(
+            color = Primary
+        )
+
+        systemUiController.setNavigationBarColor(
+            color = Color.Black
+        )
+    }
 
     Surface(
         modifier = Modifier
@@ -61,6 +93,9 @@ fun DiscoverScreen(
                             .width(34.dp)
                             .height(34.dp)
                             .clip(RoundedCornerShape(40.dp))
+                            .clickable {
+                                openMenu.value = !openMenu.value
+                            }
                     )
                 }
             }
@@ -80,8 +115,55 @@ fun DiscoverScreen(
                     DiscoverSearchBar(navController)
                 }
             }
+            if (openMenu.value) {
+                item {
+                    Popup(
+                        onDismissRequest = { openMenu.value = !openMenu.value }
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 60.dp, start = 10.dp, end = 10.dp)
+                                .background(CardButton, RoundedCornerShape(10.dp))
+                        ) {
+                            Column(
+                                modifier = Modifier
+                            ) {
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(40.dp),
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    IconButton(
+                                        onClick = { openMenu.value = !openMenu.value },
+                                        modifier = Modifier
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.Close,
+                                            contentDescription = "",
+                                            tint = Color.White,
+                                            modifier = Modifier.alpha(ContentAlpha.medium)
+                                        )
+                                    }
+                                    Spacer(Modifier.width(60.dp))
+                                    Image(
+                                        painterResource(id = R.drawable.junglebetter),
+                                        contentDescription = "Logo",
+                                        modifier = Modifier
+                                            .width(150.dp)
+                                            .fillMaxHeight()
+                                            .padding(vertical = 7.dp)
+                                    )
+                                }
+                                PFPMenu()
+                            }
+                        }
+                    }
+                }
+            }
             items(2) {
-                    index -> ArticleItem(article = articles[index])
+                    index -> ArticleItem(article = articles[index], scope, state)
             }
             item {
                 Text(
@@ -103,7 +185,7 @@ fun DiscoverScreen(
             items(
                 items = articles,
                 itemContent = {
-                    ArticleItem(article = it)
+                    ArticleItem(article = it, scope, state)
                 }
             )
             //This is to make sure that the content isn't hidden by the bottom navbar
@@ -185,8 +267,11 @@ fun DiscoverScreen(
 
 
 
+@OptIn(ExperimentalMaterialApi::class)
 @Preview
 @Composable
 fun DiscoverScreenPreview() {
-    DiscoverScreen(navController = rememberNavController())
+    val modalBottomSheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
+    val scope = rememberCoroutineScope()
+    DiscoverScreen(navController = rememberNavController(), state = modalBottomSheetState, scope = scope)
 }
