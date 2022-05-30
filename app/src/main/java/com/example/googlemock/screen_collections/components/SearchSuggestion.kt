@@ -1,6 +1,8 @@
 package com.example.googlemock.screen_collections.components
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -48,24 +50,25 @@ fun SearchSuggestion(search: Suggestion) {
             Text(
                 text = search.search,
                 color = Color.White,
-                modifier = Modifier.padding(start = 3.dp, end = 4.dp),
-                fontSize = 16.sp,
-                letterSpacing = 0.2.sp,
+                modifier = Modifier.padding(start = 3.dp, end = 4.dp, bottom = 4.dp),
+                fontSize = 13.sp,
+                letterSpacing = 0.1.sp,
                 fontFamily = myFontFamily,
                 fontWeight = FontWeight.Light
             )
-            Button(onClick = { /*TODO*/ },
+            IconButton(onClick = { /*TODO*/ },
                 modifier = Modifier
-                    .size(20.dp).fillMaxHeight(),
-                contentPadding = PaddingValues(4.dp),
-                shape = CircleShape,
-                colors = ButtonDefaults.buttonColors(backgroundColor = CardButton)
+                    .size(20.dp)
+                    .fillMaxHeight()
+                    .border(1.dp, Color.DarkGray, shape = CircleShape)
             ) {
                 Icon(
                     imageVector = Icons.Default.Close,
                     contentDescription = "Close Icon",
                     tint = Color.White,
-                    modifier = Modifier.alpha(ContentAlpha.medium)
+                    modifier = Modifier
+                        .alpha(ContentAlpha.medium)
+                        .padding(5.dp)
                 )
             }
         }

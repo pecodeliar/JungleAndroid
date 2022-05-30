@@ -29,20 +29,6 @@ fun SearchScreen(
 
     val history = remember { SearchHistoryData.historyList.shuffled() }
 
-    val systemUiController = rememberSystemUiController()
-    val useDarkIcons = MaterialTheme.colors.isLight
-
-    SideEffect {
-
-        systemUiController.setStatusBarColor(
-            color = Secondary
-        )
-
-        systemUiController.setNavigationBarColor(
-            color = Color.Black
-        )
-    }
-
     Surface(
         modifier = Modifier
             .fillMaxSize(),

@@ -29,13 +29,12 @@ import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.R
 import com.example.googlemock.screen_discover.components.ArticleItem
 import com.example.googlemock.screen_discover.components.DiscoverSearchBar
-import com.example.googlemock.screen_discover.components.PFPMenu
+import com.example.googlemock.common.PFPMenu
 import com.example.googlemock.screen_discover.components.StoryItem
 import com.example.googlemock.screen_discover.data.ArticleData
 import com.example.googlemock.screen_discover.data.StoryData
 import com.example.googlemock.ui.theme.CardButton
 import com.example.googlemock.ui.theme.Primary
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.CoroutineScope
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -47,22 +46,10 @@ fun DiscoverScreen(
 ) {
 
     val articles = remember { ArticleData.articleList.shuffled() }
+    val articles2 = remember { ArticleData.articleList.shuffled() }
     val stories = remember { StoryData.storiesList }
 
     val openMenu = remember { mutableStateOf(false) }
-
-    val systemUiController = rememberSystemUiController()
-
-    SideEffect {
-
-        systemUiController.setStatusBarColor(
-            color = Primary
-        )
-
-        systemUiController.setNavigationBarColor(
-            color = Color.Black
-        )
-    }
 
     Surface(
         modifier = Modifier
@@ -79,7 +66,7 @@ fun DiscoverScreen(
                 ) {
                     Image(
                         painterResource(id = R.drawable.vixen),
-                        contentDescription = "",
+                        contentDescription = "Profile Picture Menu",
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .width(34.dp)
@@ -115,7 +102,7 @@ fun DiscoverScreen(
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(top = 60.dp, start = 10.dp, end = 10.dp)
+                                .padding(top = 60.dp, start = 20.dp, end = 20.dp)
                                 .background(CardButton, RoundedCornerShape(10.dp))
                         ) {
                             Column(
@@ -175,7 +162,7 @@ fun DiscoverScreen(
                 }
             }
             items(
-                items = articles,
+                items = articles2,
                 itemContent = {
                     ArticleItem(article = it, scope, state)
                 }

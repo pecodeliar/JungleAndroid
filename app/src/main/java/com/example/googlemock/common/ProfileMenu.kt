@@ -1,4 +1,4 @@
-package com.example.googlemock.screen_discover.components
+package com.example.googlemock.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -79,19 +79,19 @@ fun PFPMenu() {
                         if (moreAccounts) {
                             Icon(
                                 painterResource(id = R.drawable.dsc_arrow),
-                                contentDescription = "More Accounts Button",
+                                contentDescription = "More Accounts Expand",
                                 tint = Color.White,
                                 modifier = Modifier
-                                    .rotate(270f)
+                                    .rotate(90f)
                                     .padding(3.dp)
                             )
                         } else {
                             Icon(
                                 painterResource(id = R.drawable.dsc_arrow),
-                                contentDescription = "More Accounts Button",
+                                contentDescription = "More Accounts Collapse",
                                 tint = Color.White,
                                 modifier = Modifier
-                                    .rotate(90f)
+                                    .rotate(270f)
                                     .padding(3.dp)
                             )
                         }

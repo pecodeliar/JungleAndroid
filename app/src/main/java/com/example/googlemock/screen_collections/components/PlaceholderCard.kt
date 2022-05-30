@@ -63,14 +63,17 @@ fun PlaceholderCard(placeholder: Placeholder) {
                     modifier = Modifier
                         .padding(top = 10.dp, bottom = 10.dp),
                     shape = RoundedCornerShape(50),
-                    colors = ButtonDefaults.buttonColors(backgroundColor = CardButton)
+                    colors = ButtonDefaults.buttonColors(backgroundColor = CardButton),
+                    contentPadding = PaddingValues(0.dp)
                 ) {
                     Text(
                         text = "Go to ${placeholder.button}",
                         color = Color.White,
                         fontWeight = FontWeight.Light,
                         fontFamily = myFontFamily,
-                        letterSpacing = 0.5.sp
+                        letterSpacing = 0.5.sp,
+                        modifier = Modifier
+                            .padding(bottom = 4.dp, start = 15.dp, end = 15.dp)
                     )
                 }
             }

@@ -110,7 +110,7 @@ fun ArticleItem(
                     contentDescription = "Mock Share Button",
                     tint = Accent,
                     modifier = Modifier
-                        .padding(start = 30.dp)
+                        .padding(start = 25.dp)
                         .size(19.dp)
                 )
                 IconButton(
