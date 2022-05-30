@@ -1,8 +1,10 @@
 package com.example.googlemock.screen_discover.components
 
+import android.view.Menu
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -32,44 +34,6 @@ fun PFPMenu() {
 
     var moreAccounts by remember { mutableStateOf(false) }
 
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 20.dp)
-            .background(CardButton, RoundedCornerShape(10.dp))
-    ) {
-        Column(
-            modifier = Modifier
-        ) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(40.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                IconButton(
-                    onClick = {
-                    /*TODO*/
-                    },
-                    modifier = Modifier
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Close,
-                        contentDescription = "",
-                        tint = Color.White,
-                        modifier = Modifier.alpha(ContentAlpha.medium)
-                    )
-                }
-                Spacer(Modifier.width(50.dp))
-                Image(
-                    painterResource(id = R.drawable.junglebetter),
-                    contentDescription = "Logo",
-                    modifier = Modifier
-                        .width(150.dp)
-                        .fillMaxHeight()
-                        .padding(vertical = 7.dp)
-                )
-            }
             //Accounts Section
             Row(
                 modifier = Modifier
@@ -98,6 +62,7 @@ fun PFPMenu() {
                             text = "Mari McCabe",
                             color = Color.White,
                             fontSize = 15.sp,
+                            fontFamily = myFontFamily,
                             fontWeight = FontWeight.Bold
                         )
                         Text(
@@ -140,7 +105,9 @@ fun PFPMenu() {
                 }
             }
             Row(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 20.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center
             ) {
@@ -163,7 +130,9 @@ fun PFPMenu() {
                 Divider(
                     color = Color.Gray,
                     thickness = 1.dp, modifier =
-                    Modifier.fillMaxWidth().padding(start = 60.dp)
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(start = 60.dp)
                 )
                 Row(
                     modifier = Modifier.padding(vertical = 5.dp),
@@ -178,6 +147,7 @@ fun PFPMenu() {
                     )
                     Text(
                         text = "Use without an account",
+                        fontFamily = myFontFamily,
                         color = Color.White,
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold
@@ -197,6 +167,7 @@ fun PFPMenu() {
                     Text(
                         text = "Add another account",
                         color = Color.White,
+                        fontFamily = myFontFamily,
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold
                     )
@@ -215,6 +186,7 @@ fun PFPMenu() {
                     Text(
                         text = "Manage accounts on this device",
                         color = Color.White,
+                        fontFamily = myFontFamily,
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold
                     )
@@ -244,6 +216,7 @@ fun PFPMenu() {
                         text = "Search history",
                         color = Color.White,
                         fontSize = 15.sp,
+                        fontFamily = myFontFamily,
                         fontWeight = FontWeight.Bold
                     )
                 }
@@ -252,6 +225,7 @@ fun PFPMenu() {
                     text = "Saving",
                     color = Color.White,
                     fontSize = 15.sp,
+                    fontFamily = myFontFamily,
                     modifier = Modifier.padding(end = 10.dp),
                     fontWeight = FontWeight.Bold
                 )
@@ -269,6 +243,7 @@ fun PFPMenu() {
                         text = "Delete last 15 minutes",
                         color = Color.White,
                         fontSize = 15.sp,
+                        fontFamily = myFontFamily,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(vertical = 10.dp)
                     )
@@ -290,6 +265,7 @@ fun PFPMenu() {
                 Text(
                     text = "Recent",
                     color = Color.White,
+                    fontFamily = myFontFamily,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -308,6 +284,7 @@ fun PFPMenu() {
                 Text(
                     text = "Reminders",
                     color = Color.White,
+                    fontFamily = myFontFamily,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -327,6 +304,7 @@ fun PFPMenu() {
                 Text(
                     text = "Your data in Search",
                     color = Color.White,
+                    fontFamily = myFontFamily,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -345,6 +323,7 @@ fun PFPMenu() {
                 Text(
                     text = "Settings",
                     color = Color.White,
+                    fontFamily = myFontFamily,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -363,6 +342,7 @@ fun PFPMenu() {
                 Text(
                     text = "Help & feedback",
                     color = Color.White,
+                    fontFamily = myFontFamily,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -395,8 +375,6 @@ fun PFPMenu() {
                     )
                 }
             }
-        }
-    }
 }
 
 
