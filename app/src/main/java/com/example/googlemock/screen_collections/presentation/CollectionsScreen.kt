@@ -12,7 +12,6 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -30,7 +29,7 @@ import androidx.compose.ui.window.Popup
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.R
-import com.example.googlemock.common.PFPMenu
+import com.example.googlemock.common.components.PFPMenu
 import com.example.googlemock.screen_collections.components.BookmarkBox
 import com.example.googlemock.screen_collections.components.PlaceholderCard
 import com.example.googlemock.screen_collections.components.QAItem
@@ -38,9 +37,7 @@ import com.example.googlemock.screen_collections.components.SearchSuggestion
 import com.example.googlemock.screen_collections.data.*
 import com.example.googlemock.screen_collections.model.Bookmark
 import com.example.googlemock.screen_collections.model.Placeholder
-import com.example.googlemock.screen_discover.components.DiscoverSearchBar
 import com.example.googlemock.ui.theme.*
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
 fun CollectionsScreen(

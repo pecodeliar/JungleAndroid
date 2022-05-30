@@ -29,7 +29,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.googlemock.R
 import com.example.googlemock.screen_discover.components.ArticleItem
 import com.example.googlemock.screen_discover.components.DiscoverSearchBar
-import com.example.googlemock.common.PFPMenu
+import com.example.googlemock.common.components.PFPMenu
 import com.example.googlemock.screen_discover.components.StoryItem
 import com.example.googlemock.screen_discover.data.ArticleData
 import com.example.googlemock.screen_discover.data.StoryData

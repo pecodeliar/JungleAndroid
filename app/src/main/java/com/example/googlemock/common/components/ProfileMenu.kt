@@ -1,4 +1,4 @@
-package com.example.googlemock.common
+package com.example.googlemock.common.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border

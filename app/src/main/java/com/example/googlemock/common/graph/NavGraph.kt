@@ -39,7 +39,7 @@ fun SetupNavGraph(
         startDestination = Screen.Discover.route
     ) {
         composable(route = Screen.Discover.route) {
-            ModalBottomSheetLayout(
+            ModalBottomSheetLayout( //https://johncodeos.com/how-to-create-a-bottom-sheet-with-jetpack-compose/
                 sheetContent = {
                     PreferenceMenu()
                 },
