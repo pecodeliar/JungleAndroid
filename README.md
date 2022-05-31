@@ -12,14 +12,14 @@
 
 ## Overview
 
-This project is a frontend mock of the Android Google App. My desire was to escape what is usually called "Tutorial Purgatory" and really come out of my comofrt zone of only start projects that have all the steps laid out for you. This projecy has helped me learn about great Kotlin features such as enums, making use of objects for the fake data and data classes as models. I also had a great time exploring Jetpack Compose for a lot the visual aspects of the component and learning how to make my own reuable components. I was able to learn more in depth about Navigation within Jetpack Compose and making use of Git to remember and save my progess throughout the project.
+This project is a frontend mock of the Android Google App. My desire was to escape what is usually called "Tutorial Purgatory" and really come out of my comofrt zone of only start projects that have all the steps laid out for you.
 \
 &nbsp;
 
 ## Discover Screen
 
 <p>
-  <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> 
+   <img align="right" src="https://i.imgur.com/vUrsMJx.gif" alt="Discover Screen Demo Gif" width="145"> <img align="right" src="https://i.imgur.com/ZN5GNdc.png" alt="Discover Screen Preferences Modal" width="150"> <img align="right" src="https://i.imgur.com/A5709uo.png" alt="Discover Screen Stories" width="150"> <img align="right" src="https://i.imgur.com/8XlVV6g.png" alt="Start of Discover Screen" width="150">
 <ul>
   <li>Learned about utilizing data classes to make models for the articles and stories. I made use of the Lazy Column to show the items with a scrolling ability.</li>
   <li>Learned about modals which is activated when the more (three dots) button is clicked. The favorite (heart) button also makes use of a Boolean that will changed to a filled heart if clicked.</li>
@@ -30,29 +30,10 @@ This project is a frontend mock of the Android Google App. My desire was to esca
 <br>
 
 
-## Search Screen
-
-<p>
-  <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> 
-<ul>
-  <li>Once this screen is navigated to, it automatically displays the user's keyboard to mimic the behavior of the Google App.</li>
-  <li>Made use of an object to create fake history searches that are searches that did was made to help make this project.</li>
-</ul> 
-</p>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 ## Collections Screen
 
 <p>
-  <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> 
+  <img align="right" src="https://i.imgur.com/CkQSxKL.gif" alt="Collections Screen Demo" width="145"> <img align="right" src="https://i.imgur.com/8iaD2oh.png" alt="Collections Placeholder and Bookmark Cards" width="150"> <img align="right" src="https://i.imgur.com/HVVSJBh.png" alt="Collections Quick Access" width="150"> 
 <ul>
   <li>Made use of enum classes for the bookmark boxes and placeholder cards.</li>
   <li>For each section, objects were used to mimic search suggestion data that was displayed using a Lazy Row component.</li>
@@ -67,22 +48,40 @@ This project is a frontend mock of the Android Google App. My desire was to esca
 <br>
 <br>
 
-
-## Commonalities Between the Screens
+## Search Screen
 
 <p>
-  <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> <img align="right" src="https://i.imgur.com/IyN4clk.png" alt="HTML Badge" width="150"> 
+  <img align="right" src="https://i.imgur.com/wMZBPp4.gif" alt="Search Screen Demo" width="145"> <img align="right" src="https://i.imgur.com/J3fY1Yt.png" alt="Search Query that Redirects to Google" width="150"> <img align="right" src="https://i.imgur.com/hqPpjOe.png" alt="Search Screen" width="150"> 
 <ul>
-  <li>Learned about Navigation between screens for Jetpack for activities. I used a Nav host to help with displaying the screens as well as the navigation bar at the bottom of the application. This also helped with displaying the Modal that is used during on the Discover Screen with the use of a Scaffold.</li>
+  <li>Once this screen is navigated to, it automatically displays the user's keyboard to mimic the behavior of the Google App.</li>
+  <li>Making use of a keyboard action, the user can type a query and it will direct them to the real google search</li>
+  <li>Made use of an object to create fake history searches that are searches that did was made to help make this project.</li>
+</ul> 
+</p>
+
+
+<br>
+<br>
+<br>
+<br>
+
+## Common Items Between Screens
+
+<p>
+  <img align="right" src="https://i.imgur.com/13p6pQ7.gif" alt="Accounts Menu and Navigation Bar Demo" width="145"> <img align="right" src="https://i.imgur.com/q9tV7Ap.png" alt="Accounts Menu Shared by Collections and Discover Screen" width="150"> 
+<ul>
+  <li>Learned about Navigation between screens for Jetpack for activities. I used a Nav host to help with displaying the screens as well as the navigation bar at the bottom of the application. </li>
+  <li>The above also helped with displaying the Modal that is used during on the Discover Screen with the use of a Scaffold.</li>
   <li>The profile picture in the corner of the Discover and Collections Screen will display a Popup once clicked that mimics an accounts menu.</li>
 </ul> 
 </p>
 
+
 <br>
 <br>
 <br>
 <br>
-<br>
+
 
 ## Installation
 
