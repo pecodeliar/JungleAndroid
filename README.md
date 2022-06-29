@@ -12,7 +12,7 @@
 
 ## Overview
 
-This project is a frontend mock of the Android Google App. My desire was to escape what is usually called "Tutorial Purgatory" and really come out of my comofrt zone of only start projects that have all the steps laid out for you.
+This project is a frontend mock of the Android Google App. My desire was to escape what is usually called "Tutorial Purgatory" and really come out of my comfort zone of only starting projects that have all the steps laid out for you.
 \
 &nbsp;
 
