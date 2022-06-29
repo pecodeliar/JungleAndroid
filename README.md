@@ -89,5 +89,5 @@ Due to this being a direct mock of the offical Google App, this app will not be 
 1. Click the **Code** button.
 2. Once you see a menu popup, click the **Download Zip** button. This will save the project to your computer.
 3. Once the download is complete, find the file and unzip the conent (you can do this by double-clicking or right-clicking and pressing Extract Files).
-4. Open Android Studio and click **Open an existing Android Studio Project**. (If a prject is already open, you can select **File** > **New** > **Import Project**.
+4. Open Android Studio and click **Open an existing Android Studio Project**. (If a project is already open, you can select **File** > **New** > **Import Project**.
 5. Wait for Android Studio to open the project and press the **Run** button.
